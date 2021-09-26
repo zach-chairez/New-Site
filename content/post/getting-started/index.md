@@ -34,9 +34,7 @@ The training data set contains 891 observations while the testing data set conta
 
 The training data set contains the following information about each passenger: 
 
-$$
-
-\begin{equation}
+$$\begin{equation}
 \textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)} \
 \textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)} \ 
 \textbf{Sex} \ \text{(categorical) -  Male or Female} \ 
@@ -46,9 +44,7 @@ $$
 \textbf{Ticket} \ \text{(categorical) - Ticket Number} \ 
 \textbf{Fare} \ \text{(continuous) - Price of ticket} \ 
 \textbf{Cabin} \ \text{(categorical) - Cabin Number} \ 
-\textbf{Embarked} \ \text{(categorical) - Port of Embarkation, C = Cherbourg, Q = Queenstown, S = Southampton.} \ 
-
-\end{equation}
+\textbf{Embarked} \ \text{(categorical) - Port of Embarkation, C = Cherbourg, Q = Queenstown, S = Southampton.} \ \end{equation}
 $$
 
 The testing data set contains all of the same information $\textbf{without the Survived variable}$
