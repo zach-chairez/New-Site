@@ -24,10 +24,9 @@ address:
 links:
   - url: https://cerf.confex.com/cerf/2019/meetingapp.cgi/Paper/5569
     name: More Information
-publishDate: 2017-01-01T00:00:00Z
+publishDate: 2017-01-01T00:00:00.000Z
 tags: []
-projects:
-  - example
+projects: []
 image:
   caption: ""
   focal_point: Right
