@@ -3,8 +3,8 @@ slides: " "
 url_pdf: " "
 summary: " "
 title: Spatial-Temporal Models of Multi-Species Interactions to Study the
-  Impacts of Catastrophic Events
-location: "Mobile, AL "
+       Impacts of Catastrophic Events
+location: "Mobile, AL"
 date: 2019-11-06T14:00:00.000Z
 date_end: 2019-11-06T14:15:00.000Z
 all_day: false
