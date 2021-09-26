@@ -267,11 +267,12 @@ By observation, we see small correlations between Survived and Pclass and Fare. 
 
 ```python
 # Checking the distribution of Fare.  
-fare_test = test_data["Fare"]; 
-plt.hist(fare,bins = 15);
+fare_test = test_data["Fare"]; plt.hist(fare_test,bins = 15); 
+plt.title('Histogram of the Price of Tickets for Titanic (Fare)')
+plt.xlabel('Fare Prices'); plt.ylabel('Freqency');
 ```
 
-![png](output_16_0.png)
+![png](fare_hist.png)
 
 The distribution of Fare is skewed to the right, so we'll use the median to replace the missing value in the testing data set. 
 
