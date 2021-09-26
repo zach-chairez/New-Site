@@ -1,9 +1,9 @@
 abstract: " "
 slides: ""
 url_pdf: ""
-<!-- summary: An example talk using Wowchemy's Markdown slides feature.
+summary: ""
 title: Spatial-Temporal Models of Multi-Species Interactions to Study the
-  Impacts of Catastrophic Events -->
+  Impacts of Catastrophic Events
 location: "Mobile, AL "
 date: 2019-11-06T14:00:00.000Z
 date_end: 2019-11-06T14:15:00.000Z
@@ -14,12 +14,12 @@ featured: false
 authors: []
 url_video: ""
 url_slides: ""
-<!-- address:
+address:
   street: 450 Serra Mall
   city: Stanford
   region: CA
   postcode: "94305"
-  country: United States -->
+  country: United States
 links:
   - url: https://cerf.confex.com/cerf/2019/meetingapp.cgi/Paper/5569
     name: More Information
