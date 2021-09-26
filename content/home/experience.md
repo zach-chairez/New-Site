@@ -22,7 +22,7 @@ date_format: Jan 2006
 #   Required fields are `title`, `company`, and `date_start`.
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
- experience:
+experience:
   - title: Graduate Teaching & Research Assistant
     company: The University of Texas at Arlington
     company_url: ''
@@ -32,10 +32,10 @@ date_format: Jan 2006
     date_end: ''
     description: |2-
     
-       * Prepare, present and guide students through Calculus based assignments.
-       * Creatively instill mathematical foundations in students for future mathematics and science classes.
-       * Respond to students' emails quickly and respectfully with suggestions and actions necessary to complete labs.
-       * During the Spring semesters, actively research relevant information pertaining to dissertation topic.
+        * Prepare, present and guide students through Calculus based assignments.
+        * Creatively instill mathematical foundations in students for future mathematics and science classes.
+        * Respond to students' emails quickly and respectfully with suggestions and actions necessary to complete labs.
+        * During the Spring semesters, actively research relevant information pertaining to dissertation topic.
        
   - title: Professional Tutor
     company: Del Mar College
