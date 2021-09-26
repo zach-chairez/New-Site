@@ -4,7 +4,7 @@ subtitle: The Titanic data set is a well known data set used in Kaggle
   challenges.  This blog post will discuss the tutorial provided by Kaggle for
   the Titanic data set, as well as some additional contributions using Logistic
   Regression.
-date: 2020-12-13T00:00:00Z
+date: 2020-12-13T00:00:00.000Z
 summary: Welcome 👋 We know that first impressions are important, so we've
   populated your new site with some initial content to help you get familiar
   with everything in no time.
@@ -12,12 +12,12 @@ draft: false
 featured: false
 authors:
   - admin
-lastmod: 2020-12-13T00:00:00Z
+lastmod: 2020-12-13T00:00:00.000Z
 tags: []
 categories: []
 projects: []
 image:
-  caption: "Image credit: [**Unsplash**](https://unsplash.com/photos/CpkOjOcXdUY)"
+  caption: ""
   focal_point: ""
   placement: 2
   preview_only: false
