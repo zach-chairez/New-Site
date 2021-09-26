@@ -107,7 +107,7 @@ The classifier had a 77.511% accuracy.
 
 In this section, we'll conduct a Logistic Regression to create a model which will act as our classifier.
 
-## Before we begin, we'll parse through our training data set to see if there exists any missing values and what variables we'll use for training and testing.
+#### Before we begin, we'll look through our training and testing data set to see if there exists any missing values and what variables we'll use for training and testing.
 
 ```python
 # Importing some necessary packages
