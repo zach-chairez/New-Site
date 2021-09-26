@@ -1,7 +1,7 @@
 ---
 title: Zach Chairez
 role: Mathematics Ph.D. Student
-avatar_filename: me.jpg
+avatar_filename: avatar.jpg
 bio: ""
 interests:
   - Multi-view Learning
