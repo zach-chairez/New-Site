@@ -38,10 +38,12 @@ $
 \textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)}$
 $\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)}$
 $\textbf{Sex} \ \text{(categorical) -  Male or Female}$
+
 $\textbf{Age} \ \text{(continuous) - Age of the passenger}$
 $\textbf{Sibsp} \ \text{(categorical) - Number of siblings/spouses on board}$ 
 $\textbf{Parch} \ \text{(categorical) - Number of parents/children on board}$ 
 $\textbf{Ticket} \ \text{(categorical) - Ticket Number}$ 
+
 $\textbf{Fare} \ \text{(continuous) - Price of ticket}$ 
 $\textbf{Cabin} \ \text{(categorical) - Cabin Number}$ 
 $\textbf{Embarked} \ \text{(categorical) - Port of Embarkation, C = Cherbourg, Q = Queenstown, S = Southampton.}$
