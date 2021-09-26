@@ -35,8 +35,9 @@ The training data set contains 891 observations while the testing data set conta
 The training data set contains the following information about each passenger: 
 
 $
-\textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)} \\
-\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)} \\ 
+\textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)}$
+
+$\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)}$
 \textbf{Sex} \ \text{(categorical) -  Male or Female} \\
 \textbf{Age} \ \text{(continuous) - Age of the passenger} \\
 \textbf{Sibsp} \ \text{(categorical) - Number of siblings/spouses on board} \\ 
