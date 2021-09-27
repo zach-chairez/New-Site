@@ -328,12 +328,12 @@ test_predict_np = lr.predict(x2_test)
 test_predict_l2 = lrl2.predict(x2_test)
 
 # Exporting necessary columns to a CSV file to submit to Kaggle.  
-# These two lines were copied from the tutorial.
+# These two lines were copied from the Kaggle tutorial but changed appropriately.
 my_contr_11 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_np})
 my_contr_12 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_l2})
 
 # Saving predictions in CSV files.
-# These two lines were copied (essentially) from the tutorial
+# These two lines were copied from the Kaggle tutorial but changed appropriately.  
 my_contr_11.to_csv('My_Contribution_11.csv', index = False )
 my_contr_12.to_csv('My_Contribution_12.csv', index = False )
 ```
@@ -357,7 +357,7 @@ knn_model1.fit(x1_train, y1);
 test_predict_3 = knn_model1.predict(x1_test)
 
 # Saving predictions in CSV files.
-# These two lines were copied (essentially) from the tutorial
+# These two lines were copied from the Kaggle tutorial but changed appropriately.  
 my_contr_3 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_1});
 my_contr_3.to_csv('My_Contribution_LAST.csv', index = False )
 ```
