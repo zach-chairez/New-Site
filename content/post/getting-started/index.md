@@ -105,10 +105,12 @@ output.to_csv('Tutorial_Submission.csv', index=False)
 Once the predictions were made, they were exported to a csv file named "Tutorial Submission" and they were submitted to the Titanic Kaggle challenge found here:  https://www.kaggle.com/c/titanic.  
 The classifier had a 77.511% accuracy.  
 
-# Logistic Regression
+
+# Contribution
+## Logistic Regression
 In this section, we'll conduct a Logistic Regression to create a model which will act as our classifier.
 
-## Before we begin, we'll parse through our training data set to see if there exists any missing values and what variables we'll use for training and testing.  
+### Before we begin, we'll parse through our training data set to see if there exists any missing values and what variables we'll use for training and testing.  
 
 
 ```python
@@ -338,7 +340,7 @@ my_contr_12.to_csv('My_Contribution_12.csv', index = False )
 
 Both classifiers ended up performing the same with a prediction accuracy of 76.794%, which was less accurate than the initial classifier.  We'll implement a new classifer via the method of K-Nearest Neighbors.
 
-# K-Nearest Neighbors
+## K-Nearest Neighbors
 
 In this section, we'll utilize the same variables as the Random Forest:  $\textbf{Pclass, SibSp, Parch, and Sex}$.  The majority of the data exploration occurred during our implemntation of Logistic Regression, so KNN will simply reap its benefits and We'll simply use the KNN Classifier from SKLearn on our pre-processed data.  
 
