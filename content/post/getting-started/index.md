@@ -43,8 +43,8 @@ $\textbf{Parch} \ \text{(categorical) - Number of parents/children on board}$ <b
 $\textbf{Ticket} \ \text{(categorical) - Ticket Number}$ <br>
 $\textbf{Fare} \ \text{(continuous) - Price of ticket}$<br> 
 $\textbf{Cabin} \ \text{(categorical) - Cabin Number}$ <br>
-$\textbf{Embarked} \ \text{(categorical) - Port of Embarkation$ <br>
-$\textbf{C = Cherbourg, Q = Queenstown, S = Southampton}$
+$\textbf{Embarked} \ \text{(categorical) - Port of Embarkation}$ <br>
+$\text{C = Cherbourg, Q = Queenstown, S = Southampton}$
 
 
 The testing data set contains all of the same information $\textbf{without the Survived variable}$
