@@ -35,7 +35,7 @@ The training data set contains the following information about each passenger:
 
 $
 \textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)}$ <br>
-$\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)} <br>
+$\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)}$ <br>
 $\textbf{Sex} \ \text{(categorical) -  Male or Female}$ <br> 
 $\textbf{Age} \ \text{(continuous) - Age of the passenger}$ <br> 
 $\textbf{Sibsp} \ \text{(categorical) - Number of siblings/spouses on board}$ <br> 
