@@ -20,7 +20,7 @@ image:
   placement: 2
   preview_only: false
 ---
-### All of the following code until the section marked "Contribution" was taken from https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
+### All of the following code until the section marked "Logistic Regression" was taken from https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
 
 
 ```python
@@ -281,11 +281,12 @@ By observation, we see small correlations between Survived and Pclass and Fare. 
 ```python
 # Checking the distribution of Fare.  
 fare_test2 = test_data["Fare"]; 
-plt.hist(fare_test2,bins = 15); plt.title('Histogram of the Price of Tickets for Titanic (Fare)');
+plt.hist(fare_test2,bins = 10); plt.title('Histogram of the Price of Tickets for Titanic (Fare)');
 plt.xlabel('Fare Prices'); plt.ylabel('Freqency'); 
 ```
 
-![png](output_16_1.png)
+
+![png](output_16_0.png)
 
 
 The distribution of Fare is skewed to the right, so we'll use the median to replace the missing value in the testing data set. 
