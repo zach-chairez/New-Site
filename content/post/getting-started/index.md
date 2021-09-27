@@ -3,7 +3,7 @@ title: Titanic Predictions
 subtitle: The Titanic data set is a well known data set used in Kaggle
   challenges.  This blog post will discuss the tutorial provided by Kaggle for
   the Titanic data set, as well as some additional contributions using Logistic
-  Regression.
+  Regression and K-Nearest Neighbors.
 date: 2020-12-13T00:00:00.000Z
 summary: ""
 draft: false
