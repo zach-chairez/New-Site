@@ -338,7 +338,8 @@ my_contr_11.to_csv('My_Contribution_11.csv', index = False )
 my_contr_12.to_csv('My_Contribution_12.csv', index = False )
 ```
 
-Both classifiers ended up performing the same with a prediction accuracy of 76.794%, which was less accurate than the initial classifier.  We'll implement a new classifer via the method of K-Nearest Neighbors.
+Both classifiers ended up performing the same with a prediction accuracy of 76.794%, which was less accurate than the initial classifier.  Less and additional variables were used in experimentation with accuracy ranging from approximately 68% to 76.794%.  The best performance utilized the variables $\textbf{Pclass, Parch, SibSp, and Sex}$.  
+We'll now implement a new classifier via the method of K-Nearest Neighbors.
 
 ## K-Nearest Neighbors
 
@@ -362,7 +363,7 @@ my_contr_3 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': tes
 my_contr_3.to_csv('My_Contribution_LAST.csv', index = False )
 ```
 
-The performance of the classifier using K-Nearest Neighbors with K = 20 - 25 performed at 77.751% which is SLIGHTLY better than the original performance of 77.511% via the Random Forest classifier.  
+The performance of the classifier using K-Nearest Neighbors with K = 20 - 25 performed at 77.751% which is SLIGHTLY better than the original performance of 77.511% via the Random Forest classifier.  When K = 5-15, the performance of K-Nearest Neighbors decreased to approximately 70% to 76% accuracy.    
 
 ## Conclusion
 This blog post discussed a basic introduction into the Titanic data set while using three different kinds of classifiers to predict the survival of passengers:  $\textbf{Random Forest, Logistic Regression, and K-Nearest Neighbors}$.  Each classifier, when trained with the same predictors, performed generally the same.  The Random Forest, Logistic Regression, and K-Nearest Neighbors classifiers performed with an accuracy of 77.511%, 76.794%, and 77.751%, respectively.  Future work would involve implementing more sophisticated and modern models such as SVM, Multiple Neural Nets (Deep Learning), or Gradient Boosted Trees.    
