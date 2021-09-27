@@ -20,40 +20,42 @@ image:
   placement: 2
   preview_only: false
 ---
-### All of the following code until the section marked "My Contribution" was taken from
+### All of the following code until the section marked "Logistic Regression" was taken from https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
 
-### https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
 
 ```python
 import numpy as np 
 import pandas as pd 
 ```
 
-The Titanic Data set is split into two separate data sets:  $\textbf{Training and Testing}$.\
+The Titanic Data set is split into two separate data sets:  $\textbf{Training and Testing}$.  
 The training data set contains 891 observations while the testing data set contains 418.  
 
 The training data set contains the following information about each passenger: 
 
 $
-\textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)}$<br>
-$\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)}$<br>
-$\textbf{Sex} \ \text{(categorical) -  Male or Female}$<br>
-$\textbf{Age} \ \text{(continuous) - Age of the passenger}$<br>
-$\textbf{Sibsp} \ \text{(categorical) - Number of siblings/spouses on board}$ <br>
-$\textbf{Parch} \ \text{(categorical) - Number of parents/children on board}$<br> 
+\textbf{Survived} \ \text{(categorical) - 0 (Did not survive) or 1 (Did survive)}$ <br>
+$\textbf{Pclass} \ \text{(categorical) - 1 (1st Class), 2 (2nd Class), or 3 (3rd  Class)} <br>
+$\textbf{Sex} \ \text{(categorical) -  Male or Female}$ <br> 
+$\textbf{Age} \ \text{(continuous) - Age of the passenger}$ <br> 
+$\textbf{Sibsp} \ \text{(categorical) - Number of siblings/spouses on board}$ <br> 
+$\textbf{Parch} \ \text{(categorical) - Number of parents/children on board}$ <br> 
 $\textbf{Ticket} \ \text{(categorical) - Ticket Number}$ <br>
 $\textbf{Fare} \ \text{(continuous) - Price of ticket}$<br> 
-$\textbf{Cabin} \ \text{(categorical) - Cabin Number}$<br> 
-$\textbf{Embarked} \ \text{(categorical) - Port of Embarkation}$ <br>
-$\text{C = Cherbourg, Q = Queenstown, S = Southampton.}$
+$\textbf{Cabin} \ \text{(categorical) - Cabin Number}$ <br>
+$\textbf{Embarked} \ \text{(categorical) - Port of Embarkation$ <br>
+$\textbf{C = Cherbourg, Q = Queenstown, S = Southampton}$
+
 
 The testing data set contains all of the same information $\textbf{without the Survived variable}$
+
 
 ```python
 # Loading the training and testing data sets.  
 train_data = pd.read_csv(r"C:\Users\zachc\OneDrive\Desktop\train.csv")
 test_data = pd.read_csv(r"C:\Users\zachc\OneDrive\Desktop\test.csv")
 ```
+
 
 ```python
 # Looking at the percentage of passengers who were women that survived
@@ -63,9 +65,9 @@ rate_women = sum(women)/len(women)
 print("% of women who survived:", rate_women)
 ```
 
-```
-% of women who survived: 0.7420382165605095
-```
+    % of women who survived: 0.7420382165605095
+    
+
 
 ```python
 # Looking at the percentage of passengers who were men that survived
@@ -75,39 +77,39 @@ rate_men = sum(men)/len(men)
 print("% of men who survived:", rate_men)
 ```
 
-```
-% of men who survived: 0.18890814558058924
-```
+    % of men who survived: 0.18890814558058924
+    
 
 By observation, we see that the rate at which women survived the sinking of the Titanic is much higher than that of the men.  This is a good indicator that sex may be a useful predictor for determining survival of passengers.  We'll construct a Random Forest Classifier utilizing the predictor variables $\textbf{Pclass, Sex, SibSp, and Parch}$
+
 
 ```python
 # Using a random forest to create a classifier for survival on the Titanic
 from sklearn.ensemble import RandomForestClassifier
 
-y = train_data["Survived"]
+y1 = train_data["Survived"]
 
 features = ["Pclass", "Sex", "SibSp", "Parch"]
-X = pd.get_dummies(train_data[features])
-X_test = pd.get_dummies(test_data[features])
+x1_train = pd.get_dummies(train_data[features])
+x1_test = pd.get_dummies(test_data[features])
 
 model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=1)
-model.fit(X, y)
-predictions = model.predict(X_test)
+model.fit(x1_train, y1)
+predictions = model.predict(x1_test)
 
 output = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})
 output.to_csv('Tutorial_Submission.csv', index=False)
 # print("Your submission was successfully saved!")
 ```
 
-Once the predictions were made, they were exported to a csv file named "Tutorial Submission" and they were submitted to the Titanic Kaggle challenge found here:  https://www.kaggle.com/c/titanic.\
+Once the predictions were made, they were exported to a csv file named "Tutorial Submission" and they were submitted to the Titanic Kaggle challenge found here:  https://www.kaggle.com/c/titanic.  
 The classifier had a 77.511% accuracy.  
 
-# My Contribution
-
+# Logistic Regression
 In this section, we'll conduct a Logistic Regression to create a model which will act as our classifier.
 
-#### Before we begin, we'll look through our training and testing data set to see if there exists any missing values and what variables we'll use for training and testing.
+## Before we begin, we'll parse through our training data set to see if there exists any missing values and what variables we'll use for training and testing.  
+
 
 ```python
 # Importing some necessary packages
@@ -117,46 +119,57 @@ import matplotlib.pyplot as plt
 train_data.isnull().sum()
 ```
 
-```
-PassengerId      0
-Survived         0
-Pclass           0
-Name             0
-Sex              0
-Age            177
-SibSp            0
-Parch            0
-Ticket           0
-Fare             0
-Cabin          687
-Embarked         2
-dtype: int64
-```
+
+
+
+    PassengerId      0
+    Survived         0
+    Pclass           0
+    Name             0
+    Sex              0
+    Age            177
+    SibSp            0
+    Parch            0
+    Ticket           0
+    Fare             0
+    Cabin          687
+    Embarked         2
+    dtype: int64
+
+
+
 
 ```python
 test_data.isnull().sum()
 ```
 
-```
-PassengerId      0
-Pclass           0
-Name             0
-Sex              0
-Age             86
-SibSp            0
-Parch            0
-Ticket           0
-Fare             1
-Cabin          327
-Embarked         0
-dtype: int64
-```
+
+
+
+    PassengerId      0
+    Pclass           0
+    Name             0
+    Sex              0
+    Age             86
+    SibSp            0
+    Parch            0
+    Ticket           0
+    Fare             1
+    Cabin          327
+    Embarked         0
+    dtype: int64
+
+
 
 The training and testing data set have missing values.  In the traininig data set, Age, Cabin, and Embarked have missing values.  In the testing data set, Age, Cabin, and Fare having missing values.  We'll now look at the correlation between each variable and most importantly, the passenger survival.
+
 
 ```python
 train_data.corr()
 ```
+
+
+
 
 <div>
 <style scoped>
@@ -164,16 +177,13 @@ train_data.corr()
         vertical-align: middle;
     }
 
-```
-.dataframe tbody tr th {
-    vertical-align: top;
-}
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th {
-    text-align: right;
-}
-```
-
+    .dataframe thead th {
+        text-align: right;
+    }
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -263,77 +273,100 @@ train_data.corr()
 </table>
 </div>
 
+
+
 By observation, we see small correlations between Survived and Pclass and Fare.  Of course, Pclass and Fare have a higher correlation.  The higher the class of the passenger, the more they spent on their ticket.  We also see some correlation between the age of the passenger and Pclass.  We can suggest that the older the passenger was, the higher in class they were.  For this first part, we'll simply find the median and mean of Fare for the testing data set and fill in the missing value to the training data set with either the median or mean depending on the variables' distribution.      
+
 
 ```python
 # Checking the distribution of Fare.  
-fare_test = test_data["Fare"]; plt.hist(fare_test,bins = 15); 
-plt.title('Histogram of the Price of Tickets for Titanic (Fare)');
+fare_test2 = test_data["Fare"]; 
+plt.hist(fare_test2,bins = 15); plt.title('Histogram of the Price of Tickets for Titanic (Fare)');
 plt.xlabel('Fare Prices'); plt.ylabel('Freqency'); 
 ```
 
-![png](fare_hist.png)
+    C:\Users\zachc\anaconda3\lib\site-packages\numpy\lib\histograms.py:839: RuntimeWarning: invalid value encountered in greater_equal
+      keep = (tmp_a >= first_edge)
+    C:\Users\zachc\anaconda3\lib\site-packages\numpy\lib\histograms.py:840: RuntimeWarning: invalid value encountered in less_equal
+      keep &= (tmp_a <= last_edge)
+    
+
+
+![png](output_16_1.png)
+
 
 The distribution of Fare is skewed to the right, so we'll use the median to replace the missing value in the testing data set. 
+
 
 ```python
 # # The distribution of Fare is skewed the right so we'll use the median value to replace the 
 # missing Fare value for our testing data.
-fare_med = fare_test.median(); 
-fare_test = fare_test.fillna(fare_med)
+fare2_med = fare_test2.median(); 
+fare_test2 = fare_test2.fillna(fare2_med)
 ```
 
 Now that we've filled in the missing values in the testing data set, we'll begin training our classifer.  We'll use Logistic Regression model as our classifier with the following predictors: $\textbf{Pclass, Sex, Sibsp, Parch, Fare}$.  
 
+
 ```python
 from sklearn.linear_model import LogisticRegression 
 
-fare_train = pd.DataFrame(train_data["Fare"])
-fare_test = pd.DataFrame(fare_test)
+fare_train2 = pd.DataFrame(train_data["Fare"])
+fare_test2 = pd.DataFrame(fare_test2)
 
 # Adding the variable "Fare" to the set of features for training and testing.
-X_train_new = pd.concat([X,fare_train],axis = 1)
-X_test_new = pd.concat([X_test,fare_test],axis = 1)
+x2_train = pd.concat([x1_train,fare_train2],axis = 1)
+x2_test = pd.concat([x1_test,fare_test2],axis = 1)
 
 # Creating our model based on training data with and without penalty.
+# Using pythons built in Logistic Regression function to learn our model.  
 # The penalty term is using l2 regularization.
 # The l2 regularizer helps with potential dangers caused by outliers in our predictor variables. 
 lr = LogisticRegression()
 lrl2 = LogisticRegression(penalty = 'l2') 
-trained_model_np = lr.fit(X_train_new,y)
-trained_model_l2 = lrl2.fit(X_train_new,y)
+trained_model_np = lr.fit(x2_train,y1)
+trained_model_l2 = lrl2.fit(x2_train,y1)
 
 # Making predictions on testing data.
-test_predict_np = lr.predict(X_test_new)
-test_predict_l2 = lrl2.predict(X_test_new)
+test_predict_np = lr.predict(x2_test)
+test_predict_l2 = lrl2.predict(x2_test)
 
-# Exporting necessary columns to a CSV file to submit to Kaggle.
-my_contr_np = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_np})
-my_contr_l2 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_l2})
+# Exporting necessary columns to a CSV file to submit to Kaggle.  
+# These two lines were copied from the tutorial.
+my_contr_11 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_np})
+my_contr_12 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_l2})
 
-# Saving predictions in CSV files (NP = No Penalty, l2 = L2 Regularization Used)
-my_contr_np.to_csv('My_Contribution_NP.csv', index = False )
-my_contr_np.to_csv('My_Contribution_l2.csv', index = False )
+# Saving predictions in CSV files.
+# These two lines were copied (essentially) from the tutorial
+my_contr_11.to_csv('My_Contribution_11.csv', index = False )
+my_contr_12.to_csv('My_Contribution_12.csv', index = False )
 ```
 
-Both classifiers ended up performing the same with a prediction accuracy of 76.794%, which was less accurate than the initial classifier.  We'll further investigate and utilize additional variables in our new classifier.  We'll continue to use Logistic Regression, but this time, we'll implement the use of Age in our classifer.  
+Both classifiers ended up performing the same with a prediction accuracy of 76.794%, which was less accurate than the initial classifier.  We'll implement a new classifer via the method of K-Nearest Neighbors.
+
+# K-Nearest Neighbors
+
+In this section, we'll utilize the same variables as the Random Forest:  $\textbf{Pclass, SibSp, Parch, and Sex}$.  The majority of the data exploration occurred during our implemntation of Logistic Regression, so KNN will simply reap its benefits and We'll simply use the KNN Classifier from SKLearn on our pre-processed data.  
+
 
 ```python
-# Let's try something new
-# fare = train_data["Fare"]; surv = train_data["Survived"]; pcl = train_data['Pclass']; 
-# sex = train_data["Sex"]; sibsp = train_data["SibSp"]; parch = train_data["Parch"]; 
-# emb = train_data["Embarked"]; 
+from sklearn.neighbors import KNeighborsClassifier as knn
+import math
 
-X_train = pd.get_dummies(train_data[["Pclass","Sex"]])
-X_test = pd.get_dummies(test_data[["Pclass","Sex"]])
+# Using pythons built in KNN function to learn our model.  
+knn_model1 = knn(20);
+knn_model1.fit(x1_train, y1);   
 
-# X_train_new = pd.concat([X_train,fare_train],axis = 1)
-# X_test_new = pd.concat([X_test,fare_test],axis = 1)
+# Making predictions on testing data.
+test_predict_3 = knn_model1.predict(x1_test)
 
-lr = LogisticRegression()
-trained_model_np = lr.fit(X_train,y)
-pred = lr.predict(X_test)
-
-my_contr_np = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': pred})
-my_contr_np.to_csv('My_Contribution_NP_LessV3.csv', index= False )
+# Saving predictions in CSV files.
+# These two lines were copied (essentially) from the tutorial
+my_contr_3 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_1});
+my_contr_3.to_csv('My_Contribution_LAST.csv', index = False )
 ```
+
+The performance of the classifier using K-Nearest Neighbors with K = 20 - 25 performed at 77.751% which is SLIGHTLY better than the original performance of 77.511% via the Random Forest classifier.  
+
+## Conclusion
+This blog post discussed a basic introduction into the Titanic data set while using three different kinds of classifiers to predict the survival of passengers:  $\textbf{Random Forest, Logistic Regression, and K-Nearest Neighbors}$.  Each classifier, when trained with the same predictors, performed generally the same.  The Random Forest, Logistic Regression, and K-Nearest Neighbors classifiers performed with an accuracy of 77.511%, 76.794%, and 77.751%, respectively.  Future work would involve implementing more sophisticated and modern models such as SVM, Multiple Neural Nets (Deep Learning), or Gradient Boosted Trees.    
