@@ -20,7 +20,7 @@ image:
   placement: 2
   preview_only: false
 ---
-### All of the following code until the section marked "Logistic Regression" was taken from https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
+### All of the following code until the section marked "Contribution" was taken from https://www.kaggle.com/alexisbcook/titanic-tutorial for educational purposes.
 
 
 ```python
@@ -284,13 +284,6 @@ fare_test2 = test_data["Fare"];
 plt.hist(fare_test2,bins = 15); plt.title('Histogram of the Price of Tickets for Titanic (Fare)');
 plt.xlabel('Fare Prices'); plt.ylabel('Freqency'); 
 ```
-
-    C:\Users\zachc\anaconda3\lib\site-packages\numpy\lib\histograms.py:839: RuntimeWarning: invalid value encountered in greater_equal
-      keep = (tmp_a >= first_edge)
-    C:\Users\zachc\anaconda3\lib\site-packages\numpy\lib\histograms.py:840: RuntimeWarning: invalid value encountered in less_equal
-      keep &= (tmp_a <= last_edge)
-    
-
 
 ![png](output_16_1.png)
 
