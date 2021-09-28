@@ -359,7 +359,7 @@ test_predict_3 = knn_model1.predict(x1_test)
 
 # Saving predictions in CSV files.
 # These two lines were copied from the Kaggle tutorial but changed appropriately.  
-my_contr_3 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_1});
+my_contr_3 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': test_predict_3});
 my_contr_3.to_csv('My_Contribution_LAST.csv', index = False )
 ```
 
