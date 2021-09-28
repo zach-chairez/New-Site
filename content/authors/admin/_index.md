@@ -31,7 +31,7 @@ highlight_name: true
 ---
 <!--StartFragment-->
 
-Hiiiiiiii there! I'm Zach, I'm currenly a Ph.D. student in the department of Mathematics at the University of Texas at Arlington. I'm currently working under Dr. Ren-Cang Li and Dr. Li Wang in the field of Machine Learning with a focus in Multi-view Learning. My current research involves extending single-view machine learning models to multi-view scenarios and creating algorithms to solve them. I've been tutoring and teaching mathematics periodically over the years with students in K-12 up to college. More recently, I've been working in the university while tutoring high school students privately. When I'm not working, I enjoy running, playing soccer, spending time with my girlfriend, and taking a copious amount of naps.
+Hi there! I'm Zach, I'm currenly a Ph.D. student in the department of Mathematics at the University of Texas at Arlington. I'm currently working under Dr. Ren-Cang Li and Dr. Li Wang in the field of Machine Learning with a focus in Multi-view Learning.  I've been teaching mathematics at the university level and privately over the last few years. When I'm not working, I enjoy running, playing soccer, drinking plenty of coffee and taking many naps.  
 
 
 
