@@ -5,7 +5,7 @@ subtitle: The Titanic data set is a well known data set used in Kaggle
   the Titanic data set, as well as some additional contributions using Logistic
   Regression and K-Nearest Neighbors.
 date: 2020-12-13T00:00:00.000Z
-summary: ""
+summary: "Predicting survival of Titanic passengers"
 draft: false
 featured: false
 authors:
