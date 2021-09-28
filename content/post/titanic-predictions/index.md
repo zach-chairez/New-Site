@@ -1,5 +1,5 @@
 ---
-title: Titanic Predictions
+title: Titanic Predictions part 2
 subtitle: The Titanic data set is a well known data set used in Kaggle
   challenges.  This blog post will discuss the tutorial provided by Kaggle for
   the Titanic data set, as well as some additional contributions using Logistic
