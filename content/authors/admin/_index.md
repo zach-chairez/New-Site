@@ -25,6 +25,9 @@ education:
     - course: B.S. Mathematics
       institution: Texas A&M University - Corpus Christi
       year: 2018
+    - course: Ph.D. Mathematics
+      institution: The University of Texas at Arlington
+      year: 2024
 email: ""
 superuser: true
 highlight_name: true
