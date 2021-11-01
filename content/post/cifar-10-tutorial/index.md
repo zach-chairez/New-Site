@@ -14,16 +14,16 @@ image:
 ### <u> Creating a Neural Network for CIFAR-10 Classification </u>
 
 #### References:
-- The code in this blog post can be found directly from the PyTorch tutorial [here](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).  
-- For information on the CIFAR-10 dataset, a reference page can be found [here](https://www.kaggle.com/c/cifar-10).  
-- In the section marked "Contribution", the provided code follows directly from the tutorial above, however there were slight modifications made to layer amounts and layer size for the purpose of comparing classification performance.
+
+* The code in this blog post can be found directly from the PyTorch tutorial [here](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).  
+* For information on the CIFAR-10 dataset, a reference page can be found [here](https://www.kaggle.com/c/cifar-10).  
+* In the section marked "Contribution", the provided code follows directly from the tutorial above, however there were slight modifications made to layer amounts and layer size for the purpose of comparing classification performance.
 
 #### Goal of this post:
-- The goal of this post is to provide an introduction into creating a neural network for classifying the CIFAR-10 data set, and to explore modifications that may or may not improve its accuracy.  We will look how these modifications  affect the classification performance.  
 
+* The goal of this post is to provide an introduction into creating a neural network for classifying the CIFAR-10 data set, and to explore modifications that may or may not improve its accuracy.  We will look how these modifications  affect the classification performance.  
 
 We'll begin by importing the torch package as we'll be using some built in functions for building the neural network.  
-
 
 ```python
 import torch
@@ -32,7 +32,6 @@ import torchvision.transforms as transforms
 ```
 
 Here, we're simply downloading and uploading the CIFAR-10 images, while compartmentlizing them to multiple data sets labled "trainset" and "testset".  We'll also perform an operation called "normalizing" on our datasets.  This step is merely for ease of computational performance.  We're not affecting the integrity of the datasets.  
-
 
 ```python
 # Downloading the CIFAR-10 data set, normalizing the image values in between
@@ -57,12 +56,12 @@ classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 ```
 
-    Files already downloaded and verified
-    Files already downloaded and verified
-    
+```
+Files already downloaded and verified
+Files already downloaded and verified
+```
 
 Now, let's visualize some of the images to see what we're working with!
-
 
 ```python
 import matplotlib.pyplot as plt
@@ -81,18 +80,17 @@ imshow(torchvision.utils.make_grid(images))
 print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size)))
 ```
 
-
 ![png](output_6_0.png)
 
-
-    truck  deer  ship truck
-    
+```
+truck  deer  ship truck
+```
 
 Above, we see some small images of a "horse, frog, dog, and deer".  As a reminder, each image is of size 32x32 pixels.  
 
 #### Building Our Neural Network
-At this step, we'll be creating a simple neural network structure utilzing two convolutional layers and three fully connected layers.  We'll be using the cross-entropy loss function.  Our activation functions across each layer will be $f(x) = max\{x,0\}$.  
 
+At this step, we'll be creating a simple neural network structure utilzing two convolutional layers and three fully connected layers.  We'll be using the cross-entropy loss function.  Our activation functions across each layer will be $f(x) = max{x,0}$.  
 
 ```python
 # Defining our neural network
@@ -124,7 +122,6 @@ class Net(nn.Module):
 net = Net()
 ```
 
-
 ```python
 # Defining our loss (objective) function and optimizier
 import torch.optim as optim
@@ -134,8 +131,8 @@ optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)
 ```
 
 #### Training Our Neural Network
-At this point, we've designed our neural network and we're ready to train our model.  We'll run the network through a series of iterations, hopefully building a decent a prediction function.  
 
+At this point, we've designed our neural network and we're ready to train our model.  We'll run the network through a series of iterations, hopefully building a decent a prediction function.  
 
 ```python
 for epoch in range(2):  # loop over the dataset multiple times
@@ -164,24 +161,25 @@ for epoch in range(2):  # loop over the dataset multiple times
 print('Finished Training')
 ```
 
-    [1,  2000] loss: 2.177
-    [1,  4000] loss: 1.798
-    [1,  6000] loss: 1.643
-    [1,  8000] loss: 1.554
-    [1, 10000] loss: 1.492
-    [1, 12000] loss: 1.424
-    [2,  2000] loss: 1.368
-    [2,  4000] loss: 1.337
-    [2,  6000] loss: 1.330
-    [2,  8000] loss: 1.323
-    [2, 10000] loss: 1.287
-    [2, 12000] loss: 1.265
-    Finished Training
-    
+```
+[1,  2000] loss: 2.177
+[1,  4000] loss: 1.798
+[1,  6000] loss: 1.643
+[1,  8000] loss: 1.554
+[1, 10000] loss: 1.492
+[1, 12000] loss: 1.424
+[2,  2000] loss: 1.368
+[2,  4000] loss: 1.337
+[2,  6000] loss: 1.330
+[2,  8000] loss: 1.323
+[2, 10000] loss: 1.287
+[2, 12000] loss: 1.265
+Finished Training
+```
 
 #### Testing Our Neural Network
-Now that we've trained our neural network, we can test it on our test data set.  Hopefully we'll get a decent performance!  
 
+Now that we've trained our neural network, we can test it on our test data set.  Hopefully we'll get a decent performance!  
 
 ```python
 # Testing our neural network on the test data set
@@ -224,18 +222,15 @@ with torch.no_grad():
 
 print('Accuracy of the network on the 10000 test images: %d %%' % (
     100 * correct / total))
-
 ```
-
 
 ![png](output_14_0.png)
 
-
-    GroundTruth:    cat  ship  ship plane
-    Predicted:    cat   car   car plane
-    Accuracy of the network on the 10000 test images: 53 %
-    
-
+```
+GroundTruth:    cat  ship  ship plane
+Predicted:    cat   car   car plane
+Accuracy of the network on the 10000 test images: 53 %
+```
 
 ```python
 # Figuring out what classes performed well vs poorly
@@ -263,25 +258,26 @@ for classname, correct_count in correct_pred.items():
                                                    accuracy))
 ```
 
-    Accuracy for class plane is: 65.9 %
-    Accuracy for class car   is: 83.2 %
-    Accuracy for class bird  is: 65.4 %
-    Accuracy for class cat   is: 26.1 %
-    Accuracy for class deer  is: 30.1 %
-    Accuracy for class dog   is: 41.3 %
-    Accuracy for class frog  is: 68.6 %
-    Accuracy for class horse is: 52.4 %
-    Accuracy for class ship  is: 58.0 %
-    Accuracy for class truck is: 48.4 %
-    
+```
+Accuracy for class plane is: 65.9 %
+Accuracy for class car   is: 83.2 %
+Accuracy for class bird  is: 65.4 %
+Accuracy for class cat   is: 26.1 %
+Accuracy for class deer  is: 30.1 %
+Accuracy for class dog   is: 41.3 %
+Accuracy for class frog  is: 68.6 %
+Accuracy for class horse is: 52.4 %
+Accuracy for class ship  is: 58.0 %
+Accuracy for class truck is: 48.4 %
+```
 
 # <u> Contribution </u>
-    
+
 In this section, we'll make adjustments to the neural network defined above by increasing the number of network layers and layer size.
 
 ### Part 1:  Changing Neurons Per Layer
-In the tutorial, we started with two convolutional layers with given neurons per layer.  We'll vary the number of neurons per layer between 30 and 180.  We'll look at their differences in performances.
 
+In the tutorial, we started with two convolutional layers with given neurons per layer.  We'll vary the number of neurons per layer between 30 and 180.  We'll look at their differences in performances.
 
 ```python
 # Defining our neural network
@@ -356,67 +352,69 @@ for n in range(30,181,20):
 print("Finished Training")
 ```
 
-    Currently training model 1 of 8.
-    [1,  5000] loss: 1.748
-    [1, 10000] loss: 1.372
-    [2,  5000] loss: 1.097
-    [2, 10000] loss: 1.017
-    [3,  5000] loss: 0.838
-    [3, 10000] loss: 0.836
-    Currently training model 2 of 8.
-    [1,  5000] loss: 1.734
-    [1, 10000] loss: 1.328
-    [2,  5000] loss: 1.071
-    [2, 10000] loss: 0.997
-    [3,  5000] loss: 0.821
-    [3, 10000] loss: 0.811
-    Currently training model 3 of 8.
-    [1,  5000] loss: 1.711
-    [1, 10000] loss: 1.328
-    [2,  5000] loss: 1.058
-    [2, 10000] loss: 0.994
-    [3,  5000] loss: 0.809
-    [3, 10000] loss: 0.814
-    Currently training model 4 of 8.
-    [1,  5000] loss: 1.702
-    [1, 10000] loss: 1.310
-    [2,  5000] loss: 1.033
-    [2, 10000] loss: 0.959
-    [3,  5000] loss: 0.782
-    [3, 10000] loss: 0.784
-    Currently training model 5 of 8.
-    [1,  5000] loss: 1.703
-    [1, 10000] loss: 1.332
-    [2,  5000] loss: 1.050
-    [2, 10000] loss: 0.968
-    [3,  5000] loss: 0.799
-    [3, 10000] loss: 0.795
-    Currently training model 6 of 8.
-    [1,  5000] loss: 1.707
-    [1, 10000] loss: 1.318
-    [2,  5000] loss: 1.061
-    [2, 10000] loss: 0.973
-    [3,  5000] loss: 0.801
-    [3, 10000] loss: 0.800
-    Currently training model 7 of 8.
-    [1,  5000] loss: 1.695
-    [1, 10000] loss: 1.311
-    [2,  5000] loss: 1.040
-    [2, 10000] loss: 0.964
-    [3,  5000] loss: 0.790
-    [3, 10000] loss: 0.789
-    Currently training model 8 of 8.
-    [1,  5000] loss: 1.707
-    [1, 10000] loss: 1.303
-    [2,  5000] loss: 1.029
-    [2, 10000] loss: 0.967
-    [3,  5000] loss: 0.784
-    [3, 10000] loss: 0.797
-    Finished Training
-    
+```
+Currently training model 1 of 8.
+[1,  5000] loss: 1.748
+[1, 10000] loss: 1.372
+[2,  5000] loss: 1.097
+[2, 10000] loss: 1.017
+[3,  5000] loss: 0.838
+[3, 10000] loss: 0.836
+Currently training model 2 of 8.
+[1,  5000] loss: 1.734
+[1, 10000] loss: 1.328
+[2,  5000] loss: 1.071
+[2, 10000] loss: 0.997
+[3,  5000] loss: 0.821
+[3, 10000] loss: 0.811
+Currently training model 3 of 8.
+[1,  5000] loss: 1.711
+[1, 10000] loss: 1.328
+[2,  5000] loss: 1.058
+[2, 10000] loss: 0.994
+[3,  5000] loss: 0.809
+[3, 10000] loss: 0.814
+Currently training model 4 of 8.
+[1,  5000] loss: 1.702
+[1, 10000] loss: 1.310
+[2,  5000] loss: 1.033
+[2, 10000] loss: 0.959
+[3,  5000] loss: 0.782
+[3, 10000] loss: 0.784
+Currently training model 5 of 8.
+[1,  5000] loss: 1.703
+[1, 10000] loss: 1.332
+[2,  5000] loss: 1.050
+[2, 10000] loss: 0.968
+[3,  5000] loss: 0.799
+[3, 10000] loss: 0.795
+Currently training model 6 of 8.
+[1,  5000] loss: 1.707
+[1, 10000] loss: 1.318
+[2,  5000] loss: 1.061
+[2, 10000] loss: 0.973
+[3,  5000] loss: 0.801
+[3, 10000] loss: 0.800
+Currently training model 7 of 8.
+[1,  5000] loss: 1.695
+[1, 10000] loss: 1.311
+[2,  5000] loss: 1.040
+[2, 10000] loss: 0.964
+[3,  5000] loss: 0.790
+[3, 10000] loss: 0.789
+Currently training model 8 of 8.
+[1,  5000] loss: 1.707
+[1, 10000] loss: 1.303
+[2,  5000] loss: 1.029
+[2, 10000] loss: 0.967
+[3,  5000] loss: 0.784
+[3, 10000] loss: 0.797
+Finished Training
+```
 
-The table above displays the different number of neurons in the input and output layer, respectively, followed by the percent acccuracy of prediction.  The best prediction accuracy was 68.92% when 90/200 neurons were used.  The worst prediction accuracy was 62.34% when 50/200 neurons were used.  We'd like to note that the prediction accuracy of each test was better than the tutorial prediction of 53%.  
+Let's first turn our attention to the list of loss values throughout each training.  There were a total of eight models being trained with slightly different variations.  The first model had 30 neurons in its hidden layer, while the last model had 180 neurons in its hidden layer.  Each model had 200 neurons in its output layer.  The loss values (average loss values) are displayed every 5000 mini-batch iteration.  Each model's average loss decreased at a consistent rate.
 
+The table above displays the different number of neurons in the input and output layer, respectively, followed by the percent accuracy of prediction.  The best prediction accuracy was 71.42% when 90/200 neurons were used.  The worst prediction accuracy was 67.49% when 50/200 neurons were used.  We'd like to note that the prediction accuracy of each test was better than the tutorial prediction of 53%.  
 
 ```python
 plt.bar(information[:,0], information[:,2], width = 10)
@@ -426,25 +424,24 @@ plt.title("% Accuracy vs Neurons Per Hidden Layer")
 print(information)
 ```
 
-    [[ 30.   200.    70.73]
-     [ 50.   200.    71.15]
-     [ 70.   200.    67.49]
-     [ 90.   200.    71.42]
-     [110.   200.    71.  ]
-     [130.   200.    70.44]
-     [150.   200.    70.49]
-     [170.   200.    70.61]]
-    
-
+```
+[[ 30.   200.    70.73]
+ [ 50.   200.    71.15]
+ [ 70.   200.    67.49]
+ [ 90.   200.    71.42]
+ [110.   200.    71.  ]
+ [130.   200.    70.44]
+ [150.   200.    70.49]
+ [170.   200.    70.61]]
+```
 
 ![png](output_20_1.png)
 
-
 ### Part 2:  Changing Layer Amounts
+
 In this section, we'll change the number of convolutional layers to 3 and 4.  We'll take the best performing model above and have similar neuron amounts per layer.  Similarly, we'll look at the differences in performances.  
 
 ### 2.1) 3 Convolutional Layers - 3 Fully Connected Layers
-
 
 ```python
 N = 240; k=5;
@@ -515,20 +512,20 @@ with torch.no_grad():
 print("We predicted ", 100*correct/total, "% correct using 3 Convolutional Layers and 3 Fully Connected Layers")
 ```
 
-    [1,  5000] loss: 1.496
-    [1, 10000] loss: 1.317
-    [2,  5000] loss: 1.029
-    [2, 10000] loss: 0.973
-    [3,  5000] loss: 0.827
-    [3, 10000] loss: 0.800
-    [4,  5000] loss: 0.667
-    [4, 10000] loss: 0.662
+```
+[1,  5000] loss: 1.496
+[1, 10000] loss: 1.317
+[2,  5000] loss: 1.029
+[2, 10000] loss: 0.973
+[3,  5000] loss: 0.827
+[3, 10000] loss: 0.800
+[4,  5000] loss: 0.667
+[4, 10000] loss: 0.662
 
-    We predicted  70.49 % correct using 3 Convolutional Layers and 3 Fully Connected Layers
-    
+We predicted  70.49 % correct using 3 Convolutional Layers and 3 Fully Connected Layers
+```
 
 ### 2.1) 4 Convolutional Layers - 3 Fully Connected Layers
-
 
 ```python
 import torch.nn as nn
@@ -607,18 +604,19 @@ with torch.no_grad():
 
 print("We predicted", 100*correct/total, "% correct using 4 Convolutional Layers and 3 Fully Connected Layers")
 ```
-    [1,  5000] loss: 1.733    
-    [1, 10000] loss: 1.488    
-    [2,  5000] loss: 1.311    
-    [2, 10000] loss: 1.281    
-    [3,  5000] loss: 1.187   
-    [3, 10000] loss: 1.136
-    [4,  5000] loss: 1.075
-    [4, 10000] loss: 1.138
 
-    We predicted 61.33 % correct using 4 Convolutional Layers and 3 Fully Connected Layers
-    
+```
+[1,  5000] loss: 1.733    
+[1, 10000] loss: 1.488    
+[2,  5000] loss: 1.311    
+[2, 10000] loss: 1.281    
+[3,  5000] loss: 1.187   
+[3, 10000] loss: 1.136
+[4,  5000] loss: 1.075
+[4, 10000] loss: 1.138
 
+We predicted 61.33 % correct using 4 Convolutional Layers and 3 Fully Connected Layers
+```
 
 ```python
 
