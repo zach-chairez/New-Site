@@ -414,8 +414,6 @@ Finished Training
 
 Let's first turn our attention to the list of loss values throughout each training.  There were a total of eight models being trained with slightly different variations.  The first model had 30 neurons in its hidden layer, while the last model had 180 neurons in its hidden layer.  Each model had 200 neurons in its output layer.  The loss values (average loss values) are displayed every 5000 mini-batch iteration.  Each model's average loss decreased at a consistent rate.
 
-The table above displays the different number of neurons in the input and output layer, respectively, followed by the percent accuracy of prediction.  The best prediction accuracy was 71.42% when 90/200 neurons were used.  The worst prediction accuracy was 67.49% when 50/200 neurons were used.  We'd like to note that the prediction accuracy of each test was better than the tutorial prediction of 53%.  
-
 ```python
 plt.bar(information[:,0], information[:,2], width = 10)
 plt.xlabel("Number of Neurons Per Hidden Layer")
@@ -435,7 +433,12 @@ print(information)
  [170.   200.    70.61]]
 ```
 
+The table above displays the different number of neurons in the input and output layer, respectively, followed by the percent accuracy of prediction.  The best prediction accuracy was 71.42% when 90/200 neurons were used.  The worst prediction accuracy was 67.49% when 50/200 neurons were used.  We'd like to note that the prediction accuracy of each test was better than the tutorial prediction of 53%.  
+
+
 ![png](output_20_1.png)
+
+The bar-chart above displays the same information as the table above.  
 
 ### Part 2:  Changing Layer Amounts
 
