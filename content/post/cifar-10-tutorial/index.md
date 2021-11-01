@@ -494,9 +494,9 @@ for epoch in range(4):  # loop over the dataset multiple times
         
         # print statistics
         running_loss_2 += loss_2.item()
-        if i % 2000 == 1999:    # print every 2000 mini-batches
+        if i % 5000 == 4999:    # print every 5000 mini-batches
             print('[%d, %5d] loss: %.3f' %
-                  (epoch + 1, i + 1, running_loss_2 / 2000))
+                  (epoch + 1, i + 1, running_loss_2 / 5000))
             running_loss_2 = 0.0
         loss_ph2 = loss_ph1;
         loss_ph1 = 0;  
@@ -515,30 +515,15 @@ with torch.no_grad():
 print("We predicted ", 100*correct/total, "% correct using 3 Convolutional Layers and 3 Fully Connected Layers")
 ```
 
-    [1,  2000] loss: 2.339
-    [1,  4000] loss: 1.648
-    [1,  6000] loss: 1.496
-    [1,  8000] loss: 1.398
+    [1,  5000] loss: 1.496
     [1, 10000] loss: 1.317
-    [1, 12000] loss: 1.227
-    [2,  2000] loss: 1.440
-    [2,  4000] loss: 1.072
-    [2,  6000] loss: 1.029
-    [2,  8000] loss: 1.010
+    [2,  5000] loss: 1.029
     [2, 10000] loss: 0.973
-    [2, 12000] loss: 0.986
-    [3,  2000] loss: 1.040
-    [3,  4000] loss: 0.841
-    [3,  6000] loss: 0.827
-    [3,  8000] loss: 0.798
+    [3,  5000] loss: 0.827
     [3, 10000] loss: 0.800
-    [3, 12000] loss: 0.802
-    [4,  2000] loss: 0.830
-    [4,  4000] loss: 0.651
-    [4,  6000] loss: 0.667
-    [4,  8000] loss: 0.648
+    [4,  5000] loss: 0.667
     [4, 10000] loss: 0.662
-    [4, 12000] loss: 0.680
+
     We predicted  70.49 % correct using 3 Convolutional Layers and 3 Fully Connected Layers
     
 
@@ -601,9 +586,9 @@ for epoch in range(4):  # loop over the dataset multiple times
 
         # print statistics
         running_loss_3 += loss_3.item()
-        if i % 1000 == 999:    # print every 1000 mini-batches
+        if i % 5000 == 4999:    # print every 5000 mini-batches
             print('[%d, %5d] loss: %.3f' %
-                  (epoch + 1, i + 1, running_loss_3 / 1000))
+                  (epoch + 1, i + 1, running_loss_3 / 5000))
             running_loss_3 = 0.0 
         
 correct = 0
@@ -622,55 +607,15 @@ with torch.no_grad():
 
 print("We predicted", 100*correct/total, "% correct using 4 Convolutional Layers and 3 Fully Connected Layers")
 ```
-
-    [1,  1000] loss: 2.257
-    [1,  2000] loss: 2.049
-    [1,  3000] loss: 1.942
-    [1,  4000] loss: 1.801
-    [1,  5000] loss: 1.733
-    [1,  6000] loss: 1.681
-    [1,  7000] loss: 1.627
-    [1,  8000] loss: 1.538
-    [1,  9000] loss: 1.551
-    [1, 10000] loss: 1.488
-    [1, 11000] loss: 1.455
-    [1, 12000] loss: 1.491
-    [2,  1000] loss: 1.386
-    [2,  2000] loss: 1.359
-    [2,  3000] loss: 1.356
-    [2,  4000] loss: 1.357
-    [2,  5000] loss: 1.311
-    [2,  6000] loss: 1.291
-    [2,  7000] loss: 1.291
-    [2,  8000] loss: 1.280
-    [2,  9000] loss: 1.305
-    [2, 10000] loss: 1.281
-    [2, 11000] loss: 1.265
-    [2, 12000] loss: 1.256
-    [3,  1000] loss: 1.167
-    [3,  2000] loss: 1.149
-    [3,  3000] loss: 1.160
-    [3,  4000] loss: 1.148
-    [3,  5000] loss: 1.187
-    [3,  6000] loss: 1.161
-    [3,  7000] loss: 1.165
-    [3,  8000] loss: 1.175
-    [3,  9000] loss: 1.154
+    [1,  5000] loss: 1.733    
+    [1, 10000] loss: 1.488    
+    [2,  5000] loss: 1.311    
+    [2, 10000] loss: 1.281    
+    [3,  5000] loss: 1.187   
     [3, 10000] loss: 1.136
-    [3, 11000] loss: 1.133
-    [3, 12000] loss: 1.129
-    [4,  1000] loss: 1.038
-    [4,  2000] loss: 1.043
-    [4,  3000] loss: 1.055
-    [4,  4000] loss: 1.111
     [4,  5000] loss: 1.075
-    [4,  6000] loss: 1.058
-    [4,  7000] loss: 1.091
-    [4,  8000] loss: 1.097
-    [4,  9000] loss: 1.122
     [4, 10000] loss: 1.138
-    [4, 11000] loss: 1.100
-    [4, 12000] loss: 1.105
+
     We predicted 61.33 % correct using 4 Convolutional Layers and 3 Fully Connected Layers
     
 
