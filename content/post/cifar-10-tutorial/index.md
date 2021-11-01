@@ -443,6 +443,8 @@ In this section, we'll change the number of convolutional layers to 3 and 4.  We
 
 ### 2.1) 3 Convolutional Layers - 3 Fully Connected Layers
 
+For our first variation, we'll add an additional convoluted layer for a total of three convolutional layers coupled with three fully connected layers.  We'd like to note that in the previous section, the differences in the prediction accuracies based off of the neurons per hidden layer were small, so in this section we'll utilize roughly the same amount of neurons per hidden layer, while keeping the filter size as a $5 \times 5$.  
+
 ```python
 N = 240; k=5;
 learning_rate = 0.002;
@@ -525,7 +527,13 @@ print("We predicted ", 100*correct/total, "% correct using 3 Convolutional Layer
 We predicted  70.49 % correct using 3 Convolutional Layers and 3 Fully Connected Layers
 ```
 
+The prediction accuracy of our model was 70.49% which is similar to the prediction accuracies from the previous section.  In the next section, we'll add a fourth convolutional layer and explore the differences in performance.  
+
+
+
 ### 2.1) 4 Convolutional Layers - 3 Fully Connected Layers
+
+In this section, we'll add a fourth convolutional layer to our model for a total of four convolutional layers and three fully connected layers.  In addition, we'll change the filter size in the last two convolutional layers from $5 \times 5$'s to $2 \times 2$'s.  The neurons per hidden convolutional layer are similar to the previous sections.   
 
 ```python
 import torch.nn as nn
