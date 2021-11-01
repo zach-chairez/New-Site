@@ -626,6 +626,6 @@ print("We predicted", 100*correct/total, "% correct using 4 Convolutional Layers
 We predicted 61.33 % correct using 4 Convolutional Layers and 3 Fully Connected Layers
 ```
 
-```python
+The prediction accuracy of our new model was 61.33%, which is lower than our previously trained models with two and three convolutional layers.  However, we'd like to note that we believe the change of the filter size in the last two convolutional layers may have had an affect.  The size of the filter affects the model's ability to recognize patterns and underlying features of its incoming information.  Based off the poorer performance, we'd like to suggest that the filter size of $2 \times 2$ was insufficient for recognizing patterns in the images.  
 
-```
+### Conclusion
