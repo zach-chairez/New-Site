@@ -11,7 +11,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-### <u> Creating a Neural Network for CIFAR-10 Classification
+### <u> Creating a Neural Network for CIFAR-10 Classification </u>
 
 #### References:
 - The code in this blog post can be found directly from the PyTorch tutorial [here](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).  
