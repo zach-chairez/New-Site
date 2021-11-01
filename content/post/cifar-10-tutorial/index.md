@@ -90,7 +90,7 @@ Above, we see some small images of a "horse, frog, dog, and deer".  As a reminde
 
 #### Building Our Neural Network
 
-At this step, we'll be creating a simple neural network structure utilzing two convolutional layers and three fully connected layers.  We'll be using the cross-entropy loss function.  Our activation functions across each layer will be $f(x) = max{x,0}$.  
+At this step, we'll be creating a simple neural network structure utilzing two convolutional layers and three fully connected layers.  We'll be using the cross-entropy loss function.  Our activation functions across each layer will be $f(x) = max\{x,0\}$.  
 
 ```python
 # Defining our neural network
