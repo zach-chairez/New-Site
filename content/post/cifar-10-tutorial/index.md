@@ -679,3 +679,5 @@ We predicted 61.33 % correct using 4 Convolutional Layers and 3 Fully Connected 
 In this section, we'll add a fourth convolutional layer to our model for a total of four convolutional layers and three fully connected layers.  In addition, we'll change the filter size in the last two convolutional layers from $5 \times 5$'s to $2 \times 2$'s.  The neurons per hidden convolutional layer are similar to the previous sections.
 
 ### Conclusion
+
+The tutorial used throughout this post was a wonderful stepping stone for understanding the basic uses and framework of convolutional neural networks.  As we experimented with different variations of the original model, we had our best performance of 71.42% which was realized with two convolutional layers and two fully connected layers.  The next step would be to explore a larger scale of neurons per layer as well as different activation functions besides $f(x) = max\{x,0\}$.
