@@ -275,7 +275,7 @@ for classname, correct_count in correct_pred.items():
     Accuracy for class truck is: 48.4 %
     
 
-# <u> Contribution 
+# <u> Contribution </u>
     
 In this section, we'll make adjustments to the neural network defined above by increasing the number of network layers and layer size.
 
@@ -677,7 +677,7 @@ print("We predicted", 100*correct/total, "% correct using 4 Convolutional Layers
 
 ```python
 
-```### <u> Creating a Neural Network for CIFAR-10 Classification
+```### <u> Creating a Neural Network for CIFAR-10 Classification </u>
 
 #### References:
 - The code in this blog post can be found directly from the PyTorch tutorial [here](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py).  
@@ -941,7 +941,7 @@ for classname, correct_count in correct_pred.items():
     Accuracy for class truck is: 48.4 %
     
 
-# <u> Contribution 
+# <u> Contribution </u>
     
 In this section, we'll make adjustments to the neural network defined above by increasing the number of network layers and layer size.
 
