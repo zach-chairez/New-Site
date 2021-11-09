@@ -1,0 +1,300 @@
+---
+title: Polynomial Regression
+date: 2021-11-09T19:35:49.752Z
+draft: false
+featured: false
+image:
+  filename: featured
+  focal_point: Smart
+  preview_only: false
+---
+# CSE 5334:  Assignment #2
+
+Goal:  The goal of this assignment is to learn the concept of overfitting using Polynomial Regression.
+
+## I can talk about the computational time differences/pros/cons using Linear Algebra functions from numpy versus numerical methods like using gradient descent to minimize our objective function (root mean square error).
+
+```python
+
+```
+
+```python
+
+```
+
+#### In this section, we'll transform our system of equations into a matrix system.  The coefficients of the polynomial will be found directly.  However, we'll see that we'll require numerical approximations when we reach our polynomial of degree 9 where we'll define a loss function and use gradient descent to aquire our coefficients.
+
+$ \textbf{Current Task:}$ <br>
+We'd like to approximate our training data set with four different polynomials of different degrees.  We'll seek to aquire polynomials of degrees 0, 1, 3, and 9 that we hope will best fit our data. 
+<br>
+<br>
+Each data point will be modeled in the following way
+<br>
+
+<center>$ \large y\_i = \sum\_{p=0}^k w_px_i^p,$</center> <br>
+where $i = 1,2,...,N$ and $p = 0,1,...,k$.  The value $N$ represents the amount of data pairs and $k$ represents the degree of our polynomial.<br> <br>
+We can represent our distinct polynomials with the following matrix system. 
+
+$$\large
+\begin{bmatrix}y_1 \ y_2 \ \vdots \ y_N \end{bmatrix} = \begin{bmatrix}1 & x_1 & x_1^2 & \dots & x_1^k \ 1 & x_2 & x_2^2 & \dots & x_2^k \ \vdots & \vdots & \ddots & \vdots & \vdots \ 1 & x_N & \dots & \dots & x_N^k \end{bmatrix} \begin{bmatrix} w_0 \ w_1 \ \vdots \ w_k \end{bmatrix} \iff y = Xw,$$
+<br>
+where $y \in \mathbb{R}^N, X \in \mathbb{R}^{N \times (k+1)}$, and $w \in \mathbb{R}^{k+1}$.  In a perfect world, the matrix $X$ is invertible and we can find the coefficients of the polynomials directly.  However, in general, that's not the case.  We'll have to translate our goal into an optimization problem.  For this blog post, we'll define the optimization problem in the following way:
+
+$$
+\begin{equation*}
+\large
+\min{w \in \mathbb{R}^{k+1}} \left( f(w) := \Big{ \sum{i=1}^N \frac{|yi - \sum{p=0}^k w_px_i^p |^2}{N} \Big}^{\frac{1}{2}} \right)
+\end{equation*}
+$$
+<br>
+By using the well known optimization technique as our workhorse $\textbf{gradient descent}$, we'll go through the process of finding the coefficients of the different polyomials numerically.  The general algorithm for gradient descent we'll be using in this post is of the following form:
+<br>
+
+* Input initial $w^{(0)} \in \mathbb{R}^{k+1}$. 
+* For s = 1,2,3,$\dots$, until convergence $\textbf{DO}$
+       *Compute and evaluate gradient of $f(w)$ at $w^{(s)}$.*
+       Update $w^{(s+1)} = w^{(s)} - \alpha \ (\nabla f(w^{(s)}))^T w^{(s)}$, where $0 < \alpha < 1$.
+      * If $|\frac{f(w^{(s+1)}) - f(w^{(s)})|}{f(w^{(s)})}| < \epsilon_{tol}, \ \ \ \textbf{RETURN} \ \ w^{(s+1)}$.\
+  <br>
+
+The value $\epsilon*{tol}$ will represent our tolerance.  If the relative loss error is below a certain tolerance, we'll stop gradient descent, and use the vector $w$ that was most recently computed.  Throughout the training experiments, the value of $\epsilon*{tol}$ ranges from $10^{-6}$ to $10^{-16}$.  The reason for the differences in tolerance values is in the number of iterations each experiment required to converge.  Some polynomial problems' relative error did not converge to a small enough tolerance level without exceeding $1000$'s of iterations.  Even though the algorithms converged to a smaller relative error, the values of the coefficients and training/testing error were unnoticealbe.  To combat this, we increased the tolerance, noting that the performances at the end were primarily the same.   
+
+## Using Gradient Descent to find coefficients
+
+The upcoming sections are attempting to find polynomials of $\textbf{degrees k = 0, 1, 3, and 9}$ with coefficient vector $\textbf{w} \in \mathbb{R}^{(k+1)}$ which minimizes the objective function above.  The structure of each block of code is similar, only differing in the values $\textbf{k}$.  In addition, the loss values and number of iterations necessary for convergence are displayed at the end of each model.  We set a maximum number of iterations for gradient descent to run to be $\textbf{maxit = 500}$.  There's some additional comments in the code for specific questions that you may have.    
+
+#### Degree 0 Polynomial
+
+```python
+
+```
+
+```
+
+```
+
+#### Degree 1 Polynomial
+
+```python
+
+```
+
+```
+
+```
+
+#### Degree 3 Polynomial
+
+```python
+
+```
+
+```
+
+```
+
+#### Degree 9 Polynomial
+
+```python
+
+```
+
+```
+
+```
+
+#### Table with Weights
+
+The table below displays the entries of each $w \in \mathbb{R}, \mathbb{R}^2, \mathbb{R}^4,$ and $\mathbb{R}^{10}$, respectively, as generated by the above algorithms.  
+
+|       | 0      | 1       | 3        | 9        |
+| ----- | ------ | ------- | -------- | -------- |
+| $w_0$ | 0.0863 | 0.9300  | 0.8253   | 0.6953   |
+| $w_1$ |        | \-1.786 | \-0.8878 | 1.0078   |
+| $w_2$ |        |         | \-1.6216 | \-2.9706 |
+| $w_3$ |        |         | 0.7623   | \-2.4817 |
+| $w_4$ |        |         |          | \-1.1949 |
+| $w_5$ |        |         |          | 0.1145   |
+| $w_6$ |        |         |          | 0.6941   |
+| $w_7$ |        |         |          | 1.5954   |
+| $w_8$ |        |         |          | 1.4780   |
+| $w_9$ |        |         |          | 1.8564   |
+
+#### Some Plots
+
+In this section, we're taking all of the vectors of weights $w$ and creating the polynomials to plot against our training data.  We would like to see how well each polynomial looks with respect to the training data.  
+
+```python
+
+```
+
+```
+
+```
+
+![png](output_19_1.png)
+
+![png](output_19_2.png)
+
+![png](output_19_3.png)
+
+![png](output_19_4.png)
+
+The graphs above display the 10 data points as scattered points with the dotted lines representing the polynomials that were modeled to fit them.  As we can clearly see, the degree 0, 1, and 3 polynomials don't fit the training data very well.  However, if we turn our attention to the 9th degree polynomial, we can see an increase in the performance of its ability to fit the training data.\
+Our next objective will be to re-run a similar experiment with polynomial regression, but this time we'll find models of all degrees between 0 and 9.  We'll then gather each models' final loss value and create a table to compare.  We'll finally calculate the testing error, then plot the training error we collected, and plot them against each other.  
+
+```python
+
+```
+
+| Deg | Loss   |
+| --- | ------ |
+| 0   | 0.6922 |
+| 1   | 0.5033 |
+| 2   | 0.4964 |
+| 3   | 0.4844 |
+| 4   | 0.4526 |
+| 5   | 0.4166 |
+| 6   | 0.3893 |
+| 7   | 0.3584 |
+| 8   | 0.3304 |
+| 9   | 0.3024 |
+
+In the block of code below, we're evaluating the testing error of the polynomials we created by testing them on our testing data set.  
+
+```python
+
+```
+
+```python
+
+```
+
+```python
+
+```
+
+```
+
+```
+
+![png](output_26_1.png)
+
+If we look at the graph above, we can clearly see that as the degree of the polynomial increases, the better we are at minimizing our objective function, and in turn, our prediction accuracy.  However, there's something quite interesting about the testing error being lower than the training error once the degree of the polynomial exceeds a degree of 4.  If we look at the graph below which shows the plot of the degree 9 polynomial plotted against the training and testing data, we can clearly see why.
+
+```python
+
+```
+
+```
+
+```
+
+![png](output_28_1.png)
+
+![png](output_28_2.png)
+
+There's a mini cluster of points gathered around $x \in (0.6,0.7)$ in the testing set, whereas the training set has points spread out more uniformly.  The graph of the polynomial is nearer to those particular points of the testing set, resulting in a lower testing error than the training error.  The analysis is the same for the polynomials of degrees 4 through 8.  In general, the testing error is higher than the training error.  This is a situation showing that it's not always the case.   
+
+#### Generating more Data (200 data points)
+
+Here, we're going to generate 200 additional data points and split 100/100 to training and testing, respectively.  We'll only use the 9th degree polynomial as the base model.  
+
+```python
+
+```
+
+We've raised the maximum number of iterations for convergence to 1000 due to the increase of data points.  Near the bottom, you can see the changes of the objective function values every 100 iterations.  
+
+```python
+
+```
+
+```
+
+```
+
+Similar to the graphs above, we'll plot the 9th order polynomial along with a scatterplot of the training data.  
+
+```python
+
+```
+
+```
+
+```
+
+![png](output_35_1.png)
+
+### Regularization
+
+In this section, we'll use the art of $L2$ regularization to potentially enhance the performance of our $9^{th}$ degree polynomial.  We'll briefly discuss the general form of the new optimization problem. 
+Let's first recall our original optimization problem:
+
+<br>
+$$
+\begin{equation\*}
+\large
+\min\_{w \in \mathbb{R}^{k+1}} \left( f(w) := \Big\{ \sum\_{i=1}^N \frac{|y\_i - \sum\_{p=0}^k w_px_i^p |^2}{N} \Big\}^{\frac{1}{2}} \right)
+\end{equation\*}
+$$
+
+We'll first remove the square root, and add an additional term we'll call the $\textbf{penalty term}$.  The updated problem becomes
+
+<br>
+$$
+\begin{equation\*}
+\large
+\min\_{w \in \mathbb{R}^{k+1}} \left( F(w) := \frac{1}{2}\sum\_{i=1}^N \frac{|y\_i - \sum\_{p=0}^k w_px\_i^p |^2}{N} + \frac{\lambda}{2} \sum\_{p=0}^k w_p^2 \right)
+\end{equation\*}
+$$
+
+What we've essentially done is turn our root mean squared objective function into a mean squared error function.  The additional term $\sum_{p=0}^k w_p^2$ is added in order to help with the prevention of outliers in our data, but from a more mathematical point of view, the additional term is realized when the residual errors of the training and testing data are assumed to be drawn from a normal distribution with a mean of zero and some standard deviation $\tau$.  The details of its derivation can be found 
+[here](https://bjlkeng.github.io/posts/probabilistic-interpretation-of-regularization/).  This helps minimize the chaotic nature of the values of the coefficents.  Essentially, this will help smooth our polynomial function, and in turn create a better prediction accuracy on the testing data.  Lastly, the factors of $\frac{1}{2}$ are added simply for scaling purposes.  
+
+We'll explore the effect $\lambda$ has on the overall performance of the polynomial model.  The set of values $\lambda$ will be is $\[1, 10^{-1}, 10^{-2}, 10^{-3}, 10^{-4}, 10^{-5}]$.  We'll then look at the differences between training and testing objective function values.  The code below is similar to everything we've seen so far, but now we'll be looping over different values of $\lambda$.   
+
+```python
+
+```
+
+```
+
+```
+
+As we see above from the objective function values, as $\lambda$ decreases from $1$ to $10^{-5}$, the objective function values decrease.  This makes sense since we're adding smaller and smaller penalty terms each time.  Below, we'll calculate the training and testing errors with the original objective functon 
+
+$$
+\begin{equation*}
+\large
+f(w) := \Big{ \sum{i=1}^N \frac{|y_i - \sum{p=0}^k w_px_i^p |^2}{N} \Big}^{\frac{1}{2}}, 
+\end{equation*}
+$$
+
+since the additional penalty term is unaffected by performance.  
+
+```python
+
+```
+
+In this snipit of code below, we're creating arrays of the testing and training error, and an array of $log(\lambda)$ for each $\lambda$.  Then we'll plot the testing and training error versus $log(\lambda)$.  
+
+```python
+
+```
+
+```python
+
+```
+
+```
+
+```
+
+![png](output_42_1.png)
+
+As we can clearly see from the figure above, the larger $\lambda$ gets, the larger the training and testing error become.  This suggests that the lower the value $\lambda$, the better the performance of the polynomial model.  
+
+### Conclusion
+
+Throughout experimentation, we saw that the $9^{th}$ order polynomial generally performed better
