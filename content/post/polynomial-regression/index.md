@@ -61,8 +61,7 @@ y_1\\\
 y_2\\\ 
 \vdots\\\ 
 y_N 
-\end{pmatrix} 
-= 
+\end{pmatrix} =
 \begin{pmatrix}
 1 & x_1 & x_1^2 & \dots & x_1^k\\\
 1 & x_2 & x_2^2 & \dots & x_2^k\\\ 
