@@ -350,12 +350,6 @@ plt.title("$9^{th}$ degree polynomial")
 
 
 
-
-    Text(0.5, 1.0, '$9^{th}$ degree polynomial')
-
-
-
-
 ![png](output_19_1.png)
 
 
@@ -516,12 +510,6 @@ plt.title("$9^{th}$ degree polynomial against Testing Set")
 
 
 
-
-    Text(0.5, 1.0, '$9^{th}$ degree polynomial against Testing Set')
-
-
-
-
 ![png](output_28_1.png)
 
 
@@ -612,13 +600,6 @@ plt.scatter(new_train_x,new_train_y, facecolors = 'None', edgecolors = 'blue')
 plt.plot(x_axis,polynomial_new(x_axis),'k--'); plt.grid()
 plt.title("Fitted Polynomial of Degree 9 for 100 data points")
 ```
-
-
-
-
-    Text(0.5, 1.0, 'Fitted Polynomial of Degree 9 for 100 data points')
-
-
 
 
 ![png](output_35_1.png)
