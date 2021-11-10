@@ -20,7 +20,6 @@ $\textbf{References:}$
 ```python
 # Importing necessary packages
 import numpy as np
-from numpy.linalg import inv
 import random, torch, math
 from torch.autograd import Variable as var
 import pandas as pd
