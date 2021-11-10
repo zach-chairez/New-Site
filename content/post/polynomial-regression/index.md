@@ -10,9 +10,11 @@ image:
 ---
 # CSE 5334:  Assignment #2
 
-Goal:  The goal of this assignment is to learn the concept of overfitting using Polynomial Regression.
+$\textbf{Goal:}$  The goal of this assignment is to learn the concept of overfitting using Polynomial Regression.  We'll generate synthesized data and split them into training and testing data.  We'll create polynomial models of different degrees and check their performance.  We'll also briefly discuss the process of $L2$ regularization and its impact on the performance of the polynomial models.
 
-## I can talk about the computational time differences/pros/cons using Linear Algebra functions from numpy versus numerical methods like using gradient descent to minimize our objective function (root mean square error).  
+$\textbf{References:}$
+* The basic construction of the objective functions and iteration scheme for computing objective function values throughout each algorithm is a common system used in machine learning.  However, the main resources I referred to were the slides presented in the lectures of my CSE 5334 Data Mining course in Fall 2021 at the University of Texas at Arlington taught by Dr. Deokgun Park whose website can be found [here](https://crystal.uta.edu/~park/).  
+* The code and analysis throughout this post is entirely original with regard to the above comment.    
 
 
 ```python
@@ -767,5 +769,8 @@ plt.legend(['Test Error', 'Train Error'])
 
 As we can clearly see from the figure above, the larger $\lambda$ gets, the larger the training and testing error become.  This suggests that the lower the value $\lambda$, the better the performance of the polynomial model.  
 
-### Conclusion
-Throughout experimentation, we saw that the $9^{th}$ order polynomial generally performed better 
+### Model Selection
+Throughout experimentation, we saw that the $9^{th}$ order polynomial generally performed better than the other polynomials of less degree.  In addition, the $L2$ regularizer with small $\lambda = 10^{-5}$ performed better than with $\lambda$ closer to one. 
+
+## Conclusion
+Polynomial regression is a simple, yet effective, supervised learning technique for highly nonlinear data.  As we've seen throughout this discussion, having a polynomial model of higher degree representing nonlinear data performs better in the testing stage than a lower degree polynomial model.  We also saw how adding the $L2$ regularization penaly affected the overall performance of our model.  This was a wonderful, swift introduction into polynomial and its utility in supervised learning.  
