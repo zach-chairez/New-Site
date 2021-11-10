@@ -79,12 +79,13 @@ $$
 <br>
 where $y \in \mathbb{R}^N, X \in \mathbb{R}^{N \times (k+1)}$, and $w \in \mathbb{R}^{k+1}$.  In a perfect world, the matrix $X$ is invertible and we can find the coefficients of the polynomials directly.  However, in general, that's not the case.  We'll have to translate our goal into an optimization problem.  For this blog post, we'll define the optimization problem in the following way:
 
-$$
-\begin{equation}
+<center>
+$
 \large
 \min_{w \in \mathbb{R}^{k+1}} \left( f(w) := \Big\{ \sum_{i=1}^N \frac{|y_i - \sum_{p=0}^k w_px_i^p |^2}{N} \Big\}^{\frac{1}{2}} \right)
-\end{equation}
-$$
+$
+</center>
+
 <br>
 By using the well known optimization technique as our workhorse $\textbf{gradient descent}$, we'll go through the process of finding the coefficients of the different polyomials numerically.  The general algorithm for gradient descent we'll be using in this post is of the following form:
 <br>
