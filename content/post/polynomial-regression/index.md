@@ -69,9 +69,9 @@ y_N
 1 & x_N & \dots & \dots & x_N^k 
 \end{pmatrix} 
 \begin{pmatrix} 
-w_0 \\\ 
-w_1 \\\ 
-\vdots \\\ 
+w_0\\\ 
+w_1\\\ 
+\vdots\\\ 
 w_k 
 \end{pmatrix} 
 \iff y = Xw,
