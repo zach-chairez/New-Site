@@ -56,19 +56,19 @@ where $i = 1,2,...,N$ and $p = 0,1,...,k$.  The value $N$ represents the amount 
 We can represent our distinct polynomials with the following matrix system. 
 
 \begin{pmatrix}
-y_1\\\ 
-y_2\\\ 
-\vdots\\\ 
+y_1\\
+y_2\\ 
+\vdots\\ 
 y_N 
 \end{pmatrix} = \begin{pmatrix}
-1 & x_1 & x_1^2 & \dots & x_1^k \\\
-1 & x_2 & x_2^2 & \dots & x_2^k \\\ 
-\vdots & \vdots & \ddots & \vdots & \vdots \\\ 
+1 & x_1 & x_1^2 & \dots & x_1^k\\
+1 & x_2 & x_2^2 & \dots & x_2^k\\ 
+\vdots & \vdots & \ddots & \vdots & \vdots\\ 
 1 & x_N & \dots & \dots & x_N^k
 \end{pmatrix} \begin{pmatrix} 
-w_0\\\ 
-w_1\\\ 
-\vdots\\\ 
+w_0\\
+w_1\\ 
+\vdots\\ 
 w_k 
 \end{pmatrix} $\iff y = Xw$,
 <br>
