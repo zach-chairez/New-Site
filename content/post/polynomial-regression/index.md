@@ -74,7 +74,8 @@ w_1 \\
 \vdots \\ 
 w_k 
 \end{pmatrix} 
-\iff y = Xw,$$
+\iff y = Xw,
+$$
 <br>
 where $y \in \mathbb{R}^N, X \in \mathbb{R}^{N \times (k+1)}$, and $w \in \mathbb{R}^{k+1}$.  In a perfect world, the matrix $X$ is invertible and we can find the coefficients of the polynomials directly.  However, in general, that's not the case.  We'll have to translate our goal into an optimization problem.  For this blog post, we'll define the optimization problem in the following way:
 
