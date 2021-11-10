@@ -781,9 +781,6 @@ plt.legend(['Test Error', 'Train Error'])
 
 
 
-
-
-
 ![png](output_42_1.png)
 
 
