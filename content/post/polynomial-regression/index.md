@@ -715,12 +715,13 @@ print("Training Complete!")
 
 As we see above from the objective function values, as $\lambda$ decreases from $1$ to $10^{-5}$, the objective function values decrease.  This makes sense since we're adding smaller and smaller penalty terms each time.  Below, we'll calculate the training and testing errors with the original objective functon 
 
+
+<center>
 $$
-\begin{equation*}
 \large
 f(w) := \Big\{ \sum_{i=1}^N \frac{|y_i - \sum_{p=0}^k w_px_i^p |^2}{N} \Big\}^{\frac{1}{2}}, 
-\end{equation*}
 $$
+</center>
 
 since the additional penalty term is unaffected by performance.  
 
