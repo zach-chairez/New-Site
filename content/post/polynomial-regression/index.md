@@ -56,13 +56,25 @@ where $i = 1,2,...,N$ and $p = 0,1,...,k$.  The value $N$ represents the amount 
 We can represent our distinct polynomials with the following matrix system. 
 
 $$
-\begin{bmatrix} 
-y_1 \\ 
-y_2 \\ 
-\vdots \\ 
+\begin{pmatrix} 
+y_1\\ 
+y_2\\ 
+\vdots\\ 
 y_N 
-\end{bmatrix} 
-= \begin{bmatrix}1 & x_1 & x_1^2 & \dots & x_1^k <br> 1 & x_2 & x_2^2 & \dots & x_2^k \\ \vdots & \vdots & \ddots & \vdots & \vdots \\ 1 & x_N & \dots & \dots & x_N^k \end{bmatrix} \begin{bmatrix} w_0 \\ w_1 \\ \vdots \\ w_k \end{bmatrix} \iff y = Xw,$$
+\end{pmatrix} 
+= \begin{pmatrix}
+1 & x_1 & x_1^2 & \dots & x_1^k \\
+1 & x_2 & x_2^2 & \dots & x_2^k \\ 
+\vdots & \vdots & \ddots & \vdots & \vdots \\ 
+1 & x_N & \dots & \dots & x_N^k 
+\end{pmatrix} 
+\begin{pmatrix} 
+w_0 \\ 
+w_1 \\ 
+\vdots \\ 
+w_k 
+\end{pmatrix} 
+\iff y = Xw,$$
 <br>
 where $y \in \mathbb{R}^N, X \in \mathbb{R}^{N \times (k+1)}$, and $w \in \mathbb{R}^{k+1}$.  In a perfect world, the matrix $X$ is invertible and we can find the coefficients of the polynomials directly.  However, in general, that's not the case.  We'll have to translate our goal into an optimization problem.  For this blog post, we'll define the optimization problem in the following way:
 
