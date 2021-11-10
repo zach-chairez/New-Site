@@ -782,9 +782,6 @@ plt.legend(['Test Error', 'Train Error'])
 
 
 
-    <matplotlib.legend.Legend at 0x14ed0f116d0>
-
-
 
 
 ![png](output_42_1.png)
