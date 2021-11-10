@@ -44,8 +44,6 @@ y_train = torch.tensor(y[0:10]); y_test = torch.tensor(y[10:]);
 N = len(x_train)
 ```
 
-#### In this section, we'll transform our system of equations into a matrix system.  The coefficients of the polynomial will be found directly.  However, we'll see that we'll require numerical approximations when we reach our polynomial of degree 9 where we'll define a loss function and use gradient descent to aquire our coefficients.
-
 $ \textbf{Current Task:}$ <br>
 We'd like to approximate our training data set with four different polynomials of different degrees.  We'll seek to aquire polynomials of degrees 0, 1, 3, and 9 that we hope will best fit our data. 
 <br>
