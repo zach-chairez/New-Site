@@ -56,7 +56,6 @@ where $i = 1,2,...,N$ and $p = 0,1,...,k$.  The value $N$ represents the amount 
 We can represent our distinct polynomials with the following matrix system. 
 
 $$
-\large
 \begin{bmatrix} 
 y_1 \\ 
 y_2 \\ 
