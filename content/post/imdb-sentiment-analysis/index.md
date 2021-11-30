@@ -63,8 +63,8 @@ In general, the events $A_1,A_2,\dots,A_n$ are dependent on each other.  Assumin
 
 The original IMBD dataset contains 50,000 movie reviews with a positive (1) or negative (0) review as a label.  The data set is split between 25,000 positive and 25,000 negative reviews.  In the dataset we'll be working in this blog post, we'll deal with a subset of the original dataset.  The original data set can be found [here](https://www.kaggle.com/lakshmi25npathi/sentiment-analysis-of-imdb-movie-reviews) and the sub-datasetset can be found [here](https://www.kaggle.com/marklvl/sentiment-labelled-sentences-data-set) with descriptions.  The sub-data set has
 
-* 500 movie reviews, with
-* 250 positive/negative reviews.     
+* 1000 movie reviews, with
+* 500 positive/negative reviews.     
 
 #### <u> Uploading the Sub-Dataset </u>
 
