@@ -118,7 +118,8 @@ As part of an exercise, we'll start by finding the probability of finding the wo
 
 <br>
 $$\begin{equation}
-P(\text{"the"}) = \frac{\text{# of text entries containing the word "the"}}{\text{total number of text entries}}
+\small{
+P(\text{"the"}) = \frac{\text{# of text entries containing the word "the"}}{\text{total number of text entries}} }
 \end{equation}$$
 
 We'll run through each text entry and identify whether the word "the" appears at least once, then move onto the next text entry until we've gone through every one.  
@@ -139,7 +140,8 @@ As stated above, the probability of finding the word "the" in a single text entr
 
 <br>
 $$\begin{equation}
- P(\text{"the"}| \text{positive text entry}) = \frac{\text{# of text entries containing the word "the" in a positive text entry}}{\text{total number of positive text entries}}
+\small{
+ P(\text{"the"}| \text{positive text entry}) = \frac{\text{# of text entries containing the word "the" in a positive text entry}}{\text{total number of positive text entries}} }
 \end{equation}$$
 
 ```python
