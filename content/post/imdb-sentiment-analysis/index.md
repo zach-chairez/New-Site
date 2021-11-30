@@ -140,7 +140,7 @@ print('The probability of randomly selecting a text entry and it contains the wo
 The probability of randomly selecting a text entry and it contains the word "the" is 58.9 %
 ```
 
-As stated above, the probability of finding the word "the" in a single text entry is $58.9 \%$.  Roughly 3/5 text entries contain the word "the".  Now, we'll find the probability of finding the word "the" in a positive text entry, i.e., 
+As stated above, the probability of finding the word "the" in a single text entry is $58.9$ %.  Roughly 3/5 text entries contain the word "the".  Now, we'll find the probability of finding the word "the" in a positive text entry, i.e., 
 
 <br>
 $$\begin{equation}
