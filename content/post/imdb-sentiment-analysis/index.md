@@ -8,18 +8,18 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-## <u> CSE 5335 Assignment #3:  Naive-Bayes Classifier <\u>
+## <u> CSE 5335 Assignment #3:  Naive-Bayes Classifier </u>
  
-###  <u> References <\u>
+###  <u> References</u>
 - I slightly altered the function $\textbf{word_count}$ from [here](https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-12.php) to create a dictionary of the words from the datasets.
 - The image used for explaining 5-fold cross validation was from [here](https://aiaspirant.com/cross-validation/)
 - I referred to to [this link](https://docs.python.org/2/library/collections.html) for the function $\textbf{Counter}$.  
 - All other code and algorithms are of my original work.  
 
-#### <u>Goal:<\u>  
+#### <u>Goal:</u> 
 The goal of this assignment is to build a simple text classifier for a set of movie reviews provided by the [IMBD Sentiment Analysis Sub-Dataset](https://www.kaggle.com/marklvl/sentiment-labelled-sentences-data-set) using a Naive-Bayes classification scheme.  We'll begin by introducing Bayes Theorem and the concept of the Naive-Bayes assumption.   
 
-## <u>Bayes Theorem
+## <u>Bayes Theorem</u>
 Given two events $A$ and $B$, the conditional probability of A happening given that B has already happened is given by Bayes formula
 <br>
 
@@ -40,7 +40,7 @@ $$
 
 The denominator $\sum_{A'} P(B|A')P(A')$ is adding up all possible events $A'$, where $A'$ belongs to some event space.  Note that the event $A$ is also an event that needs to be summed over.  The value or function $P(A)$ is most notably called the $\textbf{prior probability}$.  The prior probability is exactly what it sounds like.  It's the prior information we have available to us going into a few decision.  Similarly, the value or function $P(A|B)$ is notably called the $\textbf{posterior probability}$.  The posterior probablity is an informed probability, utilizing the information gathered in the prior to make a more educated and accurate prediction.  
 
-## <u>Naive-Bayes
+## <u>Naive-Bayes</u>
 The backbone of Naive-Bayes is the assumption of independence of conditional probabilities.  Let $A_1,A_2,\dots,A_n$ be a sequence of events.  Then the assumption of Naive-Bayes states
     
 <br>
@@ -53,14 +53,14 @@ $$
 <br>
 In general, the events $A_1,A_2,\dots,A_n$ are dependent on each other.  Assuming they're indepedent or conditionally independent is a $\textit{naive}$ assumption, hence the name Naive-Bayes.  However, implementing this assumption within a naive-bayes classifier, specifically for text classification, works fairly well.  In this blog post, we'll implement the assumption of naive-bayes to create a classifier that will predict the sentiment (good or bad) of a movie review.  
 
-### <u> IMBD Sentiment Analysis
+### <u> IMBD Sentiment Analysis </u>
 
 The original IMBD dataset contains 50,000 movie reviews with a positive (1) or negative (0) review as a label.  The data set is split between 25,000 positive and 25,000 negative reviews.  In the dataset we'll be working in this blog post, we'll deal with a subset of the original dataset.  The original data set can be found [here](https://www.kaggle.com/lakshmi25npathi/sentiment-analysis-of-imdb-movie-reviews) and the sub-datasetset can be found [here](https://www.kaggle.com/marklvl/sentiment-labelled-sentences-data-set) with descriptions.  The sub-data set has
     
 * 500 movie reviews, with
 * 250 positive/negative reviews.     
 
-#### <u> Uploading the Sub-Dataset
+#### <u> Uploading the Sub-Dataset </u>
 Let's begin by uploading the sub-dataset and split the data into training/testing. 
 
 
@@ -154,7 +154,7 @@ Similar to the probability of finding the word "the" in any text entry, the prob
 
 In this next section, let's recall the process of 5-fold cross validation.  
 
-#### <u> 5-fold cross validation    
+#### <u> 5-fold cross validation </u>   
 <div>
 <img src="attachment:5fold2.png" width="400"/>
 </div>
@@ -578,5 +578,5 @@ print("The prediction accuracy on the test set was", "{:.2f}".format(acc), '%')
 
 As we see by our classifier, we made a $50\%$ prediction accuracy on our test set.  The naive-bayes classifier worked half of the time, which is not ideal.  
 
-### <u> Discussion and Conclusion
-For future experiments, we would like to run some potential Monte Carlo simulations, where we randomize any 10 words for our positive or negative sub dictionaries, and predict on the test set.  The words we chose, initially, for our subdictionaries are suboptimal.  There must exist a collection of words for each subdictionary which optimizes the naive-bayes classifier.  In conclusion, this blog post was an introduction into the Naive-Bayes classification scheme for a text entry sentiment analysis problem.  There's much to explore in this post.  We've only begun to scratch the surface of optimal performance.   
+### <u> Discussion and Conclusion</u>
+For future experiments, we would like to run some potential Monte Carlo simulations, where we randomize any 10 words for our positive or negative sub dictionaries, and predict on the test set.  The words we chose, initially, for our sub-dictionaries are suboptimal.  There must exist a collection of words for each sub-dictionary which optimizes the naive-bayes classifier.  In conclusion, this blog post was an introduction into the Naive-Bayes classification scheme for a text entry sentiment analysis problem.  There's much to explore in this post.  We've only begun to scratch the surface of optimal performance.   
