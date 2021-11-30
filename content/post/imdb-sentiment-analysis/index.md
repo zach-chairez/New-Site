@@ -50,7 +50,7 @@ The backbone of Naive-Bayes is the assumption of independence of conditional pro
 <br>
 $$
 \begin{equation}
-P(A_1 \cap A_2 \cap \dots \cap A_{n-1}|A_n) = \prod\_{j=1}^{n-1}P(A_j|A_n).
+P(A_1 \cap A_2 \cap \dots \cap A_{n-1}|A_n) = \prod_{j=1}^{n-1}P(A_j|A_n).
 \end{equation}
 $$
     
