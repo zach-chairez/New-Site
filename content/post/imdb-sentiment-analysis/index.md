@@ -537,13 +537,13 @@ Following in this manner, the conditional probability for a negative text entry 
 
 $$
 \begin{equation}
-P(-|B*j) = \frac{P(-) \prod*{j=1}^{k*j} P(B*{ji}|-)}{P(B_j)}.  \ \ \ \ \ \\
+P(-|B_j) = \frac{P(-) \prod_{j=1}^{k_j} P(B_{ji}|-)}{P(B_j)}.  \ \ \ \ \ \\
 \end{equation}
 $$
 
 The two above equations, which represent their appropriate conditional probabilities, have the same denominator.  For computational purposes, we'll ignore the denominators and compare their numerators.  Our classifier will work, in a general way, as follows:
 
-* If $ \left( P(-) \prod*{j=1}^{k_j} P(B*{ji}|-) \right) < \left( P(+) \prod*{j=1}^{k_j} P(B*{ji}|+) \right )$
+* If $ \left( P(-) \prod_{j=1}^{k_j} P(B_{ji}|-) \right) < \left( P(+) \prod_{j=1}^{k_j} P(B*{ji}|+) \right )$
 
   * Classify text entry as Positive (1)
 * Otherwise
