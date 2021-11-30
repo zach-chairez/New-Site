@@ -163,7 +163,7 @@ print('The probability of randomly selecting a text entry and it contains the wo
 The probability of randomly selecting a text entry and it contains the word "the" given that it's a positive entry is 58.4 %
 ```
 
-Similar to the probability of finding the word "the" in any text entry, the probablity of finding the word "the" given a positive text entry is approximately 3/5 or, more specifically, $58.4%$.  
+Similar to the probability of finding the word "the" in any text entry, the probablity of finding the word "the" given a positive text entry is approximately 3/5 or, more specifically, $58.4 \%$.  
 
 In this next section, let's recall the process of 5-fold cross validation.  
 
