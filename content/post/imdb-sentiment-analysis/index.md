@@ -145,7 +145,10 @@ As stated above, the probability of finding the word "the" in a single text entr
 <br>
 $$\begin{equation}
 \small{
- P(\text{"the"}| \text{positive text entry}) = \frac{\text{# of text entries containing the word "the" in a positive text entry}}{\text{total number of positive text entries}} }
+ P(\text{"the"}| \text{positive text entry}) = }
+\end{equation}$$
+$$\begin{equation}
+\small{ \frac{\text{# of text entries containing the word "the" in a positive text entry}}{\text{total number of positive text entries}} }
 \end{equation}$$
 
 ```python
