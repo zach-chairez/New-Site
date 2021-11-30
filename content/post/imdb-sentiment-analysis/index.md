@@ -119,7 +119,11 @@ As part of an exercise, we'll start by finding the probability of finding the wo
 <br>
 $$\begin{equation}
 \small{
-P(\text{"the"}) = \frac{\text{# of text entries containing the word "the"}}{\text{total number of text entries}} }
+P(\text{"the"}) = }
+\end{equation}$$
+$$ \begin{equation}
+\small{
+\frac{\text{# of text entries containing the word "the"}}{\text{total number of text entries}} }
 \end{equation}$$
 
 We'll run through each text entry and identify whether the word "the" appears at least once, then move onto the next text entry until we've gone through every one.  
