@@ -8,7 +8,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-## <u> CSE 5335 Assignment #3:  Naive-Bayes Classifier
+## <u> CSE 5335 Assignment #3:  Naive-Bayes Classifier <\u>
 
 ###  <u> References
 - I slightly altered the function $\textbf{word_count}$ from [here](https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-12.php) to create a dictionary of the words from the datasets.
