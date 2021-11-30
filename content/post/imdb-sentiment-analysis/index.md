@@ -140,7 +140,7 @@ print('The probability of randomly selecting a text entry and it contains the wo
 The probability of randomly selecting a text entry and it contains the word "the" is 58.9 %
 ```
 
-As stated above, the probability of finding the word "the" in a single text entry is $58.9$ %.  Roughly 3/5 text entries contain the word "the".  Now, we'll find the probability of finding the word "the" in a positive text entry, i.e., 
+As stated above, the probability of finding the word "the" in a single text entry is $58.9$%.  Roughly 3/5 text entries contain the word "the".  Now, we'll find the probability of finding the word "the" in a positive text entry, i.e., 
 
 <br>
 $$\begin{equation}
@@ -259,7 +259,7 @@ We predict (in Test set 4) the probability of finding the word "the" is 57.50 % 
 We predict (in Test set 5) the probability of finding the word "the" is 65.00 % while the actual probability is 45.00 %
 ```
 
-As we see above, the predictions are roughly $60 %$.  Some of the prediction accuracies are perfect, while some are far off.  For example, in the first experiment, we predicted a  $65 %$ probability of the word "the" appearing in a text entry while the actual probability was  $40 %$.  Overall, we can safely say the true probability probably falls close to  $60 %$.  Up next, we'll perform the same task, however we'll check the probabilities of find the word "the" given a positive and negative text entry.      
+As we see above, the predictions are roughly $60$%.  Some of the prediction accuracies are perfect, while some are far off.  For example, in the first experiment, we predicted a  $65$% probability of the word "the" appearing in a text entry while the actual probability was  $40$%.  Overall, we can safely say the true probability probably falls close to  $60$%.  Up next, we'll perform the same task, however we'll check the probabilities of find the word "the" given a positive and negative text entry.      
 
 Here, we're splitting the positive and negative text entries from the previously made training sets with their appropriate sentiments.  Then, we'll use 5-fold cross validation again to check our prediction accuracies.  
 
@@ -350,7 +350,7 @@ We predict (in Test set 4) the probability of finding the word "the" given a neg
 We predict (in Test set 5) the probability of finding the word "the" given a negative text entry is 58.54 % while the actual probability is 66.67 %
 ```
 
-As shown above, the predicted probablities of finding the word "the" given a negative text entry, on average, are close to the actual accuracies of $ \sim60%$, however the predictions themselves are not entirely accurate.  We'll need to keep this in mind when we're establishing prior probablities later.  
+As shown above, the predicted probabilities of finding the word "the" given a negative text entry, on average, are close to the actual accuracies of $\sim60$%, however the predictions themselves are not entirely accurate.  We'll need to keep this in mind when we're establishing prior probabilities later.  
 
 ```python
 # Checking P('the' | POSITIVE TEXTS)
@@ -414,7 +414,7 @@ We predict (in Test set 4) the probability of finding the word "the" given a pos
 We predict (in Test set 5) the probability of finding the word "the" given a positive text entry is 58.54 % while the actual probability is 77.78 %
 ```
 
-As shown above, the predicted probablities of finding the word "the" given a positive text entry, on average, are close to the actual accuracies of $ \sim60%$, however the predictions themselves are not entirely accurate.  This follows in parallel to the results we saw above with the negative text entries.   
+As shown above, the predicted probabilities of finding the word "the" given a positive text entry, on average, are close to the actual accuracies of $\sim60$%, however the predictions themselves are not entirely accurate.  This follows in parallel to the results we saw above with the negative text entries.   
 
 In this next section, we'll create dictionaries for the words that appear in all, positive, and negative text entries.  We'll then locate the most common, and in turn, the most useful words we believe will help us to identify a future potential text entry as a positive or negative movie review.  
 
@@ -525,11 +525,11 @@ P(A|B) = \frac{P(B|A)P(A)}{P(B)}, \ \ \ \ \ \  P(B) \neq 0.\
 \end{equation}
 $$
 
-Let $A = \textbf{positive (or negative) text entry}$ and $B = B*j = \textbf{j}^{th} \ \textbf{text entry} = \cap*{i=1}^{k*j} B*{ji}$, where $B_{ji} = \text{i}^{th} \ \textbf{word in the j}^{th} \ \textbf{text entry}$ and $k_j = \textbf{number of words in text entry j}$.  Along with our naive bayes assumption, the above equation (in terms of a positive text entry) can be written as 
+Let $A = \textbf{positive (or negative) text entry}$ and $B = B_j = \textbf{j}^{th} \ \textbf{text entry} = \cap_{i=1}^{k*j} B_{ji}$, where $B_{ji} = \text{i}^{th} \ \textbf{word in the j}^{th} \ \textbf{text entry}$ and $k_j = \textbf{number of words in text entry j}$.  Along with our naive bayes assumption, the above equation (in terms of a positive text entry) can be written as 
 
 $$
 \begin{equation}
-P(+|B*j) = \frac{P(B_j|+)P(+)}{P(B_j)} = \frac{P(\cap*{i=1}^{k*j} B*{ji}|+)P(+)}{P(\cap*{i=1}^{k_j} B*{ji})} = \frac{P(+) \prod*{j=1}^{k_j} P(B*{ji}|+)}{P(B_j)}.  \ \ \ \ \ \\
+P(+|B_j) = \frac{P(B_j|+)P(+)}{P(B_j)} = \frac{P(\cap_{i=1}^{k_j} B_{ji}|+)P(+)}{P(\cap_{i=1}^{k_j} B_{ji})} = \frac{P(+) \prod_{j=1}^{k_j} P(B_{ji}|+)}{P(B_j)}.  \ \ \ \ \ \\
 \end{equation}
 $$
 
@@ -541,16 +541,16 @@ P(-|B*j) = \frac{P(-) \prod*{j=1}^{k*j} P(B*{ji}|-)}{P(B_j)}.  \ \ \ \ \ \\
 \end{equation}
 $$
 
-The two above equations, which represent their appropriate conditional probabilities, have the same denominator.  For computional purposes, we'll ignore the denominators and compare their numertors.  Our classifier will work, in a general way, as follows:
+The two above equations, which represent their appropriate conditional probabilities, have the same denominator.  For computational purposes, we'll ignore the denominators and compare their numerators.  Our classifier will work, in a general way, as follows:
 
 * If $ \left( P(-) \prod*{j=1}^{k_j} P(B*{ji}|-) \right) < \left( P(+) \prod*{j=1}^{k_j} P(B*{ji}|+) \right )$
 
   * Classify text entry as Positive (1)
 * Otherwise
 
-  * Classifiy text entry as Negative (0)
+  * Classify text entry as Negative (0)
 
-Lastly, the values $P(+) = P(-) = 1/2$.  Therefore, we'll simply compare values $\prod*{j=1}^{k_j} P(B*{ji}|-)$ and $\prod*{j=1}^{k_j} P(B*{ji}|+)$
+Lastly, the values $P(+) = P(-) = 1/2$.  Therefore, we'll simply compare values $\prod*{j=1}^{k_j} P(B_{ji}|-)$ and $\prod_{j=1}^{k_j} P(B_{ji}|+)$
 
 Now it's time to take our probabilities and check the testing set
 
@@ -585,7 +585,7 @@ print("The prediction accuracy on the test set was", "{:.2f}".format(acc), '%')
 The prediction accuracy on the test set was 50.00 %
 ```
 
-As we see by our classifier, we made a $50%$ prediction accuracy on our test set.  The naive-bayes classifier worked half of the time, which is not ideal.  
+As we see by our classifier, we made a $50$% prediction accuracy on our test set.  The naive-bayes classifier worked half of the time, which is not ideal.  
 
 ### <u> Discussion and Conclusion</u>
 
