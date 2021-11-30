@@ -9,14 +9,14 @@ image:
   preview_only: false
 ---
 ## <u> CSE 5335 Assignment #3:  Naive-Bayes Classifier <\u>
-
-###  <u> References
+ 
+###  <u> References <\u>
 - I slightly altered the function $\textbf{word_count}$ from [here](https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-12.php) to create a dictionary of the words from the datasets.
 - The image used for explaining 5-fold cross validation was from [here](https://aiaspirant.com/cross-validation/)
 - I referred to to [this link](https://docs.python.org/2/library/collections.html) for the function $\textbf{Counter}$.  
 - All other code and algorithms are of my original work.  
 
-#### <u>Goal:  
+#### <u>Goal:<\u>  
 The goal of this assignment is to build a simple text classifier for a set of movie reviews provided by the [IMBD Sentiment Analysis Sub-Dataset](https://www.kaggle.com/marklvl/sentiment-labelled-sentences-data-set) using a Naive-Bayes classification scheme.  We'll begin by introducing Bayes Theorem and the concept of the Naive-Bayes assumption.   
 
 ## <u>Bayes Theorem
