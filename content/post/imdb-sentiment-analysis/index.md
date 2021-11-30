@@ -543,14 +543,14 @@ $$
 
 The two above equations, which represent their appropriate conditional probabilities, have the same denominator.  For computational purposes, we'll ignore the denominators and compare their numerators.  Our classifier will work, in a general way, as follows:
 
-* If $ \left( P(-) \prod_{j=1}^{k_j} P(B_{ji}|-) \right) < \left( P(+) \prod_{j=1}^{k_j} P(B*{ji}|+) \right )$
+* If $ \left( P(-) \prod_{j=1}^{k_j} P(B_{ji}|-) \right) < \left( P(+) \prod_{j=1}^{k_j} P(B_{ji}|+) \right )$
 
   * Classify text entry as Positive (1)
 * Otherwise
 
   * Classify text entry as Negative (0)
 
-Lastly, the values $P(+) = P(-) = 1/2$.  Therefore, we'll simply compare values $\prod*{j=1}^{k_j} P(B_{ji}|-)$ and $\prod_{j=1}^{k_j} P(B_{ji}|+)$
+Lastly, the values $P(+) = P(-) = 1/2$.  Therefore, we'll simply compare values $\prod_{j=1}^{k_j} P(B_{ji}|-)$ and $\prod_{j=1}^{k_j} P(B_{ji}|+)$
 
 Now it's time to take our probabilities and check the testing set
 
