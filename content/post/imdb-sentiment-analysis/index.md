@@ -41,7 +41,7 @@ P(A|B) = \frac{P(B|A)P(A)}{\sum_{A'} P(B|A')P(A')}
 \end{equation}
 $$
 
-The denominator $\sum_{A'} P(B|A')P(A')$ is adding up all possible events $A'$, where $A'$ belongs to some event space.  Note that the event $A$ is also an event that needs to be summed over.  The value or function $P(A)$ is most notably called the $\textbf{prior probability}$.  The prior probability is exactly what it sounds like.  It's the prior information we have available to us going into a few decision.  Similarly, the value or function $P(A|B)$ is notably called the $\textbf{posterior probability}$.  The posterior probablity is an informed probability, utilizing the information gathered in the prior to make a more educated and accurate prediction.  
+The denominator $\sum_{A'} P(B|A')P(A')$ is adding up all possible events $A'$, where $A'$ belongs to some event space.  Note that the event $A$ is also an event that needs to be summed over.  The value or function $P(A)$ is most notably called the $\textbf{prior probability}$.  The prior probability is exactly what it sounds like.  It's the prior information we have available to us going into a few decision.  Similarly, the value or function $P(A|B)$ is notably called the $\textbf{posterior probability}$.  The posterior probability is an informed probability, utilizing the information gathered in the prior to make a more educated and accurate prediction.  
 
 ## <u>Naive-Bayes</u>
 
@@ -50,7 +50,7 @@ The backbone of Naive-Bayes is the assumption of independence of conditional pro
 <br>
 $$
 \begin{equation}
-P(A_1 \cap A\_2 \cap \dots \cap A\_{n-1}|A\_n) = \prod\_{j=1}^{n-1}P(A_j|A_n).
+P(A_1 \cap A_2 \cap \dots \cap A_{n-1}|A_n) = \prod\_{j=1}^{n-1}P(A_j|A_n).
 \end{equation}
 $$
     
