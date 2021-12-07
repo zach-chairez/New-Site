@@ -296,7 +296,7 @@ The response variable we're after is $\textbf{FTR}$ which corresponds to the ful
 
 Before we begin, we'll take these variables and turn them into cateogrical variables the model will understand.
 
-#### <u> Data Pre-Processing <u/> 
+#### <u> Data Pre-Processing </u>
 
 
 ```python
@@ -869,7 +869,7 @@ sns.pairplot(temp, height = 1.5)
 
 The above scatterplot matrix displays the relationships between some of the variables with respect to each other.  This plot visualizes the correlations as expressed in the above correlation matrix.  The clear relationships are the amount of shots taken per team, the amount of shots on target per team, and the desired result of a win.  The more shots a team takes, the more likely their shots will be on target, which increases their chances of winning.  With this information, we'll utilize these variables within our models as we expressed in Part 1.  
 
-#### <u> Training <u/>  
+#### <u> Training </u>  
 We'll add the additional variables to our set of training features and re-run the same procedure as in Part 1.  
 
 
