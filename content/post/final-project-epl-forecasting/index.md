@@ -16,7 +16,7 @@ image:
 * I referred to these websites for python general coding questions: [Link 1](https://www.w3schools.com/python/python_arrays.asp), [Link 2](https://scikit-learn.org/stable/user_guide.html), [Link 3](https://www.programiz.com/python-programming).
 * The code, blog post, and analysis is entirely original work. 
 * Here's a quick link to the step-by-step [read-me](https://github.com/zach-chairez/zach-chairez/blob/main/README.md) which will take you to my GitHub. 
-* The link to my jupyter notebook can be found [here](http://localhost:8888/notebooks/CSE%20Data%20Mining%20Assignments/Final%20Project.ipynb)
+* The link to my jupyter notebook can be found [here](https://www.kaggle.com/zachchairez/final-project-cse-5334-epl-forecasting/edit)
 
 
 #### <u> Goal </u>
