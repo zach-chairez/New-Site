@@ -78,7 +78,11 @@ Random Forests are simple yet effective decision making algorithms for binary of
 The inputted data contains the predictor variables and their associated labels.  The random forest will try to find paths along the predictor variables which produce maximum performance.  It'll then log all the combinations of variables which best predict the associated labels, then output said variables as the best combination for prediction.  The algorithm itself runs on a greedy method, where it looks to minimize the amount of variables needed to perform at an optimal capacity.  The random forest allows for both categorical and numerical explanatory variables, and its implementation is simple and effective in most cases.  
 
 #### <u> Gradient Boosted Trees </u>
-The second model on our list are Gradient Boosted Trees.  
+The second model on our list are Gradient Boosted Trees.  The idea behind gradient boosted trees is that it takes a decision tree and tries to optimize over its performance instead of a random forest, where it creates many decision trees and looks to find the one which creates the best performance.  Below is a simple visual of the differences.  
+
+<img src = "https://miro.medium.com/max/1400/1*FoOt85zXNCaNFzpEj7ucuA.png" width = 600 />
+
+The gradient boosted tree builds on top of a single decision tree, backpropogating along some gradient of a given loss function, then updates the decisions on that associated tree.  We'll be using both of these classifiers in this post and compare their performances.    
 
 #### <u> Uploading Data </u>
 
