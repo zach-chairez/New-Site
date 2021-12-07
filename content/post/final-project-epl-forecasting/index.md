@@ -55,7 +55,7 @@ Match Statistics (where available)
 * $\textbf{HBP}$ = Home Team Bookings Points (10 = yellow, 25 = red)
 * $\textbf{ABP}$ = Away Team Bookings Points (10 = yellow, 25 = red)
 
-#### <u> Uploading Data <u/>
+#### <u> Uploading Data </u>
 
 We'll begin by importing data beginning from the year 2010.  The training data will consist of all the matches between 2010 and 2020.  The most recent full season, 2020-2021, will be our testing set.  The two classification models we'll be utilizing throughout the entirety of this post are $\textbf{Random Forests}$ and $\textbf{Gradient Boosted Trees}$.  Random forests perform well with categorical data as inputs and gradient boosted trees  which creates an ensemble of random forests and chooses the best performance model.  In some cases, as we'll see, the performance between the two of them is comparable.     
 
