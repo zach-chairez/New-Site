@@ -1,6 +1,7 @@
 ---
 title: CIFAR-10 Tutorial
 date: 2021-11-01T18:33:01.540Z
+show_date: false
 summary: "An introduction to neural networks by exploring the CIFAR-10 data
   set.  We look at a pre-made tutorial and make changes to understand
   performance.  "
