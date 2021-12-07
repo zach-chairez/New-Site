@@ -1,6 +1,7 @@
 ---
 title: IMDB Sentiment Analysis
 date: 2021-11-30T07:13:01.608Z
+show_date: false
 summary: "This blog post will provide an introduction into the Naive-Bayes Text
   Classifier using the IMDB Sentiment Analysis data set provided by Kaggle.  "
 draft: false
