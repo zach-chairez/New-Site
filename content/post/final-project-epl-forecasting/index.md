@@ -17,6 +17,7 @@ image:
 * The code, blog post, and analysis is entirely original work. 
 * Here's a quick link to the step-by-step [read-me](https://github.com/zach-chairez/zach-chairez/blob/main/README.md) which will take you to my GitHub. 
 * The link to my jupyter notebook can be found [here](https://www.kaggle.com/zachchairez/final-project-cse-5334-epl-forecasting/edit)
+* The links to the different images used in this post can be found [here](https://www.tibco.com/reference-center/what-is-a-random-forest) and [here]
 
 
 #### <u> Goal </u>
@@ -63,6 +64,16 @@ Match Statistics (where available)
 * $\textbf{AR}$ = Away Team Red Cards
 * $\textbf{HBP}$ = Home Team Bookings Points (10 = yellow, 25 = red)
 * $\textbf{ABP}$ = Away Team Bookings Points (10 = yellow, 25 = red)
+
+
+#### <u> Models Used </u>
+The two different models we'll be implementing in this post are #\textbf{Random Forests and Gradient Boosted Trees}$.  
+
+##### <u> Random Forests </u>
+Random Forests are simple yet effective decision making algorithms for binary of multi-class classification.  The figure below displays a heuristic approach to the random forest algorithm.
+
+<img src="https://www.tibco.com/sites/tibco/files/media_entity/2021-05/random-forest-diagram.svg"
+     width = 600 />
 
 #### <u> Uploading Data </u>
 
