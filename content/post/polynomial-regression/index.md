@@ -18,7 +18,8 @@ $\textbf{Goal:}$  The goal of this assignment is to learn the concept of overfit
 
 $\textbf{References:}$
 * The basic construction of the objective functions and iteration scheme for computing objective function values throughout each algorithm is a common system used in machine learning.  However, the main resources I referred to were the slides presented in the lectures of my CSE 5334 Data Mining course in Fall 2021 at the University of Texas at Arlington taught by Dr. Deokgun Park whose website can be found [here](https://crystal.uta.edu/~park/).  
-* The code and analysis throughout this post is entirely original with regard to the above comment.    
+* The code and analysis throughout this post is entirely original with regard to the above comment. 
+* A link to my jupyter notebook script can be found [here](http://localhost:8888/notebooks/CSE%20Data%20Mining%20Assignments/Assignment%20%232.ipynb)   
 
 
 ```python
@@ -782,4 +783,7 @@ As we can clearly see from the figure above, the larger $\lambda$ gets, the larg
 Throughout experimentation, we saw that the $9^{th}$ order polynomial generally performed better than the other polynomials of less degree.  In addition, the $L2$ regularizer with small $\lambda = 10^{-5}$ performed better than with $\lambda$ closer to one. 
 
 ## Conclusion
-Polynomial regression is a simple, yet effective, supervised learning technique for highly nonlinear data.  As we've seen throughout this discussion, having a polynomial model of higher degree representing nonlinear data performs better in the testing stage than a lower degree polynomial model.  We also saw how adding the $L2$ regularization penaly affected the overall performance of our model.  This was a wonderful, swift introduction into polynomial regression and its utility in supervised learning.  
+Polynomial regression is a simple, yet effective, supervised learning technique for highly nonlinear data.  As we've seen throughout this discussion, having a polynomial model of higher degree representing nonlinear data performs better in the testing stage than a lower degree polynomial model.  We also saw how adding the $L2$ regularization penaly affected the overall performance of our model.  This was a wonderful, swift introduction into polynomial regression and its utility in supervised learning. 
+
+## Challenges and Solutions
+There were no major challenges in the programming aspect of this project.  The main challenge in this specfic problem was the general non-existence of an analytic solution to the system of equations which would derive our weights.  We would simply create a matrix system and find the weights directly.  However, we needed to perform a numerical technique in order to arrive at our weights.  Writing and implementing the algorithms were somewhat tedious, but I refered to my old scripts I've written in MatLab as reference and a guide.  Overall, this project was fun to do.  As a mathematician first, I try to understand the mathematical advantages and disadvantages of any numerical scheme, and gradient descent for polynomial regression with additional regularization was not foreign to me.    
