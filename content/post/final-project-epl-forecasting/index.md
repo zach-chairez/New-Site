@@ -1,6 +1,5 @@
 ---
 title: "Final Project:  EPL Forecasting"
-date: 2021-12-07T02:31:23.621Z
 draft: false
 featured: false
 image:
