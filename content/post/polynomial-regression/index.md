@@ -19,7 +19,7 @@ $\textbf{Goal:}$  The goal of this assignment is to learn the concept of overfit
 $\textbf{References:}$
 * The basic construction of the objective functions and iteration scheme for computing objective function values throughout each algorithm is a common system used in machine learning.  However, the main resources I referred to were the slides presented in the lectures of my CSE 5334 Data Mining course in Fall 2021 at the University of Texas at Arlington taught by Dr. Deokgun Park whose website can be found [here](https://crystal.uta.edu/~park/).  
 * The code and analysis throughout this post is entirely original with regard to the above comment. 
-* A link to my jupyter notebook script can be found [here](http://localhost:8888/notebooks/CSE%20Data%20Mining%20Assignments/Assignment%20%232.ipynb)   
+* A link to my jupyter notebook script can be found [here](https://www.kaggle.com/zachchairez/naive-bayes-classifier/edit)   
 
 
 ```python
