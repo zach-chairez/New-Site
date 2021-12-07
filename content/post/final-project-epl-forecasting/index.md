@@ -74,6 +74,11 @@ Random Forests are simple yet effective decision making algorithms for binary of
 
 <img src="https://www.tibco.com/sites/tibco/files/media_entity/2021-05/random-forest-diagram.svg"
      width = 600 />
+     
+The inputted data contains the predictor variables and their associated labels.  The random forest will try to find paths along the predictor variables which produce maximum performance.  It'll then log all the combinations of variables which best predict the associated labels, then output said variables as the best combination for prediction.  The algorithm itself runs on a greedy method, where it looks to minimize the amount of variables needed to perform at an optimal capacity.  The random forest allows for both categorical and numerical explanatory variables, and its implementation is simple and effective in most cases.  
+
+#### <u> Gradient Boosted Trees </u>
+The second model on our list are Gradient Boosted Trees.  
 
 #### <u> Uploading Data </u>
 
