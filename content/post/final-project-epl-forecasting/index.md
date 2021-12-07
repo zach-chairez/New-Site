@@ -19,7 +19,7 @@ image:
 * The link to my jupyter notebook can be found [here](https://www.kaggle.com/zachchairez/final-project-cse-5334-epl-forecasting/edit)
 * The links to the different images used in this post can be found [here](https://www.tibco.com/reference-center/what-is-a-random-forest) and [here](https://medium.com/analytics-vidhya/ensemble-models-bagging-boosting-c33706db0b0b)
 * This is a link to the one page {{% staticref "uploads/cv.pdf" %}} description and motivation {{% /staticref %}} for this classifier.
-* Here's a [link](https://youtu.be/6A9FiIBGRig) to my one minute promotional video for the project. 
+* Here's a [link](https://youtu.be/6A9FiIBGRig) to my short promotional video for the project. 
 
 
 #### <u> Goal </u>
