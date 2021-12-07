@@ -12,7 +12,7 @@ image:
 
 #### <u> References </u> 
 * I used the EPL data sets as provided by [Football-Data-Co](https://www.football-data.co.uk/englandm.php).
-* I referred to these websites for python general coding questions: [Link 1(https://www.w3schools.com/python/python_arrays.asp), [Link 2]https://scikit-learn.org/stable/user_guide.html), [Link 3](https://www.programiz.com/python-programming).
+* I referred to these websites for python general coding questions: [Link 1](https://www.w3schools.com/python/python_arrays.asp), [Link 2](https://scikit-learn.org/stable/user_guide.html), [Link 3](https://www.programiz.com/python-programming).
 * The code, blog post, and analysis is entirely original work.  
 
 
