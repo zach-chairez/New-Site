@@ -1,6 +1,8 @@
 ---
 title: Polynomial Regression
 date: 2021-11-09T19:35:49.752Z
+show_date: false
+reading_time: false
 summary: "A brief introduction and implementation of polynomial regression with
   $L2$ regularization on synthesized data.  "
 draft: false
