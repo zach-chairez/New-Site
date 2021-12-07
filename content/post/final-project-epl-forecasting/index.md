@@ -67,7 +67,7 @@ Match Statistics (where available)
 
 
 #### <u> Models Used </u>
-The two different models we'll be implementing in this post are #\textbf{Random Forests and Gradient Boosted Trees}$.  
+The two different models we'll be implementing in this post are $\textbf{Random Forests and Gradient Boosted Trees}$.  
 
 ##### <u> Random Forests </u>
 Random Forests are simple yet effective decision making algorithms for binary of multi-class classification.  The figure below displays a heuristic approach to the random forest algorithm.
