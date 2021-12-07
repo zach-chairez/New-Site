@@ -20,7 +20,7 @@ image:
 * The image used for explaining 5-fold cross validation was from [here](https://i2.wp.com/thatdatatho.com/wp-content/uploads/2018/10/5-fold-cross-validation-split.png?resize=807%2C491&is-pending-load=1#038;ssl=1)
 * I referred to to [this link](https://docs.python.org/2/library/collections.html) for the function $\textbf{Counter}$.  
 * All other code and algorithms are of my original work.  
-* A link to my jupyter notebook can be found [here](http://localhost:8888/notebooks/CSE%20Data%20Mining%20Assignments/Assignment%20%233%20Naive-Bayes%20Classifier.ipynb)
+* A link to my jupyter notebook can be found [here](https://www.kaggle.com/zachchairez/naive-bayes-classifier/edit/)
 
 #### <u>Goal:</u>
 
