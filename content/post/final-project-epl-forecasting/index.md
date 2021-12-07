@@ -17,7 +17,7 @@ image:
 * The code, blog post, and analysis is entirely original work. 
 * Here's a quick link to the step-by-step [read-me](https://github.com/zach-chairez/zach-chairez/blob/main/README.md) which will take you to my GitHub. 
 * The link to my jupyter notebook can be found [here](https://www.kaggle.com/zachchairez/final-project-cse-5334-epl-forecasting/edit)
-* The links to the different images used in this post can be found [here](https://www.tibco.com/reference-center/what-is-a-random-forest) and [here]
+* The links to the different images used in this post can be found [here](https://www.tibco.com/reference-center/what-is-a-random-forest) and [here](https://medium.com/analytics-vidhya/ensemble-models-bagging-boosting-c33706db0b0b)
 
 
 #### <u> Goal </u>
