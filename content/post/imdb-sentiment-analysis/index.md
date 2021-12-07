@@ -1,12 +1,12 @@
 ---
+reading_time: false
 title: IMDB Sentiment Analysis
 date: 2021-11-30T07:13:01.608Z
-show_date: false
-reading_time: false
 summary: "This blog post will provide an introduction into the Naive-Bayes Text
   Classifier using the IMDB Sentiment Analysis data set provided by Kaggle.  "
 draft: false
 featured: false
+show_date: false
 image:
   filename: featured
   focal_point: Smart
@@ -17,7 +17,7 @@ image:
 ### <u> References</u>
 
 * I slightly altered the function $\textbf{word_count}$ from [here](https://www.w3resource.com/python-exercises/string/python-data-type-string-exercise-12.php) to create a dictionary of the words from the datasets.
-* The image used for explaining 5-fold cross validation was from [here](https://aiaspirant.com/cross-validation/)
+* The image used for explaining 5-fold cross validation was from [here](https://i2.wp.com/thatdatatho.com/wp-content/uploads/2018/10/5-fold-cross-validation-split.png?resize=807%2C491&is-pending-load=1#038;ssl=1)
 * I referred to to [this link](https://docs.python.org/2/library/collections.html) for the function $\textbf{Counter}$.  
 * All other code and algorithms are of my original work.  
 * A link to my jupyter notebook can be found [here](http://localhost:8888/notebooks/CSE%20Data%20Mining%20Assignments/Assignment%20%233%20Naive-Bayes%20Classifier.ipynb)
