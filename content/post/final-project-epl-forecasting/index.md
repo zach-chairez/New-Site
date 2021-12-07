@@ -21,7 +21,7 @@ image:
 The Barclay’s English Premier League (EPL) is arguably the greatest soccer (football) league in the world.  With the likes of Liverpool, Manchester United, Chelsea, and Arsenal, the EPL is one of the most dynamic, fast paced, unpredictable leagues in the world.  Teams in the EPL play in a 38-match season from September through May of each year, while facing each opposing team twice.  Over the last two decades, [Football-Data-Co](https://www.football-data.co.uk/englandm.php) has gathered results, match statistics, and betting odds of every EPL game.  We’ll be utilizing some of the data to create a fixture prediction model which will give us an output, depending on a certain set of variables, the result of a given match.  
 
 #### <u> Notes for Football Data </u>
-Below, you'll find a list of all the past and present variables and match statistics that are available from each season.  Note that some variables are no longer in use.  Later in the post, we'll discuss the different variables that are used and the featuer selection methods.   
+Below, you'll find a list of all the past and present variables and match statistics that are available from each season.  Note that some variables are no longer in use.  Later in the post, we'll discuss the different variables that are used and the feature selection methods.   
 
 
 <br>
@@ -285,7 +285,7 @@ display(all_seasons['HomeTeam'].unique())
            'Sheffield United', 'Leeds'], dtype=object)
 
 
-The array above displays all 37 unique teams that have every played in the EPL since 2010.  The number of teams in the EPL at any given time is 20.  At the end of every season, the bottom three teams are booted out of the league and drop to the second division, where the top three teams of the second division take their place in the following season.  This system allows for a more competitive and open style of advancement, unlike that of the American sports leagues where being at the bottom of a table does not affect your oppportunities for next seasons placements.  
+The array above displays all 37 unique teams that have every played in the EPL since 2010.  The number of teams in the EPL at any given time is 20.  At the end of every season, the bottom three teams are booted out of the league and drop to the second division, where the top three teams of the second division take their place in the following season.  This system allows for a more competitive and open style of advancement, unlike that of the American sports leagues where being at the bottom of a table does not affect your opportunities for next seasons placements.  
 
 ##  <u> Part 1:  Ignorant yet Simple Approach </u>
 
@@ -300,7 +300,7 @@ The response variable we're after is $\textbf{FTR}$ which corresponds to the ful
 * $\textbf{D}$ = Draw or Tie
 
 
-Before we begin, we'll take these variables and turn them into cateogrical variables the model will understand.
+Before we begin, we'll take these variables and turn them into categorical variables the model will understand.
 
 #### <u> Data Pre-Processing </u>
 
@@ -440,7 +440,7 @@ display(temp.head())
 </div>
 
 
-The columns HomeTeam, AwayTeam, FTR, Referee, and FTR have now been turned into categorical variables with particular integer assignments.  These new variables will be the inputs we use for our classifiers as opposed to strings.  In addition, we've split the date into multipe columns with their associated day and month.  Notice how we did not create a column for the year.  In this case, we're ignoring the time component of the data and simply categorizing the day and month as particular classes.  
+The columns HomeTeam, AwayTeam, FTR, Referee, and FTR have now been turned into categorical variables with particular integer assignments.  These new variables will be the inputs we use for our classifiers as opposed to strings.  In addition, we've split the date into multiple columns with their associated day and month.  Notice how we did not create a column for the year.  In this case, we're ignoring the time component of the data and simply categorizing the day and month as particular classes.  
 
 #### <u> Separating the Training and Testing Sets </u>
 Here, we'll separate all of the seasons between the training and testing data sets.  Seasons 2010-2020 will be in our training set, while the last season, 2020-2021, will be our testing set.  
@@ -568,12 +568,12 @@ print("The accuracy of the gradient boosted tree without ref is", '{:.2f}'.forma
     
 
 #### <u> Discussion </u> 
-We've displayed only a few of the experiments from this training and testing procedure.  The accuracies displayed above are approximately equal to the mean accuracies.  The highest accuracy was the original random forest with the inclusion of the referee with $46.32$%. This basic and ignorant approach to our classifier shows in the acccuracy.  In the next section, we'll perform the same methods, however we'll include more variables we believe will add accuracy to the predictions.  One comment before we move onto the next section.  You may be asking yourself $\textbf{Why is there so much emphasis on using/not using the variable Ref?}$.  This question is valid, yet a little controversial.  Depending on what kind of EPL fans you ask, they may say that the existence of a particular referee has no effect on the outcome of a game, while others may wholeheartedly disagree.  A referee may be more lineant or strict during a football match, resulting in more free kicks, penalty kicks, yellow and red cards, which may affect the performance of the teams.  To include this notion, we've made different models that use versus don't use the referee as an explanatory variable.  As we see from the random forest, the inlcusion of the ref has a slight effect on its performance.    
+We've displayed only a few of the experiments from this training and testing procedure.  The accuracies displayed above are approximately equal to the mean accuracies.  The highest accuracy was the original random forest with the inclusion of the referee with $46.32$%. This basic and ignorant approach to our classifier shows in the acccuracy.  In the next section, we'll perform the same methods, however we'll include more variables we believe will add accuracy to the predictions.  One comment before we move onto the next section.  You may be asking yourself $\textbf{Why is there so much emphasis on using/not using the variable Ref?}$.  This question is valid, yet a little controversial.  Depending on what kind of EPL fans you ask, they may say that the existence of a particular referee has no effect on the outcome of a game, while others may wholeheartedly disagree.  A referee may be more lineant or strict during a football match, resulting in more free kicks, penalty kicks, yellow and red cards, which may affect the performance of the teams.  To include this notion, we've made different models that use versus don't use the referee as an explanatory variable.  As we see from the random forest, the inclusion of the ref has a slight effect on its performance.    
 
 ## <u> Part 2:  Data Exploration and Additional Predictors </u>  
 
 #### <u> Some Data Exploration </u>
-We'll look at the connections, if any, between the variables with the full time result (FTR), and with each other.  This will help us identitfy potential explanatory variables.
+We'll look at the connections, if any, between the variables with the full time result (FTR), and with each other.  This will help us identify potential explanatory variables.
 
 
 ```python
@@ -851,7 +851,7 @@ match_stats.corr()
 
 
 
-The above correlation matrix shows potential relationships between each of the variables and the full time result (FTR).  The most obvious of relationships are HS, AS, HST, and AST with FTR.  The more shots taken by each team, and the more shots taken on target for each team, the more likely that team will win.  There's some additional conncetions between the number of corner kicks that a team is awarded, therefore there's an indirect relationship between corner kicks and FTR.  Regardless, we'll utilize each of these variables in conjuction withe variables we used in the previous section to create our predictor.  
+The above correlation matrix shows potential relationships between each of the variables and the full time result (FTR).  The most obvious of relationships are HS, AS, HST, and AST with FTR.  The more shots taken by each team, and the more shots taken on target for each team, the more likely that team will win.  There's some additional connections between the number of corner kicks that a team is awarded, therefore there's an indirect relationship between corner kicks and FTR.  Regardless, we'll utilize each of these variables in conjunction with the variables we used in the previous section to create our predictor.  
 
 #### <u> Visualizing the Relationships </u>
 
@@ -953,7 +953,7 @@ for i in range(len(test)):
         acc_new2[i] = 1
 print("The accuracy of the gradient boosted trees is", '{:.2f}'.format(sum(acc_new2)/len(test)*100), '%')
 
-# Accuracy of Gradient Boosted Trees wihtout Refereee
+# Accuracy of Gradient Boosted Trees wihtout Referee
 acc_new2_noref = np.zeros(len(test))
 for i in range(len(test)):
     if pred_large_gbt_noref[i] == ftr_test.iloc[i]:
@@ -1062,8 +1062,8 @@ print("The accuracy of the gradient boosted trees is", '{:.2f}'.format(sum(acc_f
     
 
 #### <u> Discussion: </u>
-With the introduction of the model selectied features, our predictor performed slightly better than in Part 2.  The random forest model performed with an accurcy of $60$% while the gradient boosted trees performed at $57.37$%.  In this post, we've seen the general random forest outperform its gradient boosted tree counterpart.  
+With the introduction of the model selected features, our predictor performed slightly better than in Part 2.  The random forest model performed with an accuracy of $60$% while the gradient boosted trees performed at $57.37$%.  In this post, we've seen the general random forest outperform its gradient boosted tree counterpart.  
 
 ### <u> Conclusion </u>  
-In this blog post, we created random forests and gradient boosted trees to predict football matches depending on a certain set of explanatory varibles (features).  We began with a simple approach, until we dove deeper into the relationships between some of the additional features.  When we performed feature selection, our performanced peaked with an accuracy of $60$%.  In the future, we hope to perform a simple yet informative time series analysis of the variables that we believe will have serial correlation.  For instance, the variable $\textbf{HST}$ may be affected with time.  This is because the performance of a team changes as the months and years go on; they may increase or decrease depending.  If we can build a simple pre-classifier to predict, with a certain confidence, the amount of goals the home team will shoot on target, we can have a better handle on the result of the match.  This logic follows for a few of the other variables as well.  This analysis will occur in future work.    
+In this blog post, we created random forests and gradient boosted trees to predict football matches depending on a certain set of explanatory variables (features).  We began with a simple approach, until we dove deeper into the relationships between some of the additional features.  When we performed feature selection, our performance peaked with an accuracy of $60$%.  In the future, we hope to perform a simple yet informative time series analysis of the variables that we believe will have serial correlation.  For instance, the variable $\textbf{HST}$ may be affected with time.  This is because the performance of a team changes as the months and years go on; they may increase or decrease depending.  If we can build a simple pre-classifier to predict, with a certain confidence, the amount of goals the home team will shoot on target, we can have a better handle on the result of the match.  This logic follows for a few of the other variables as well.  This analysis will occur in future work.    
 
