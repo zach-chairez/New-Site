@@ -3,6 +3,7 @@ title: "Final Project:  EPL Forecasting"
 draft: false
 featured: false
 show_date: false 
+reading_time: false
 image:
   filename: featured
   focal_point: Smart
