@@ -10,9 +10,15 @@ image:
 ---
 ## <u> Final Project:  English Premier League (EPL) Soccer Match Result Classifier </u>
 
+#### <u> References </u> 
+* I used the EPL data sets as provided by [Football-Data-Co](https://www.football-data.co.uk/englandm.php).
+* I referred to these websites for python general coding questions: [Link 1(https://www.w3schools.com/python/python_arrays.asp), [Link 2]https://scikit-learn.org/stable/user_guide.html), [Link 3](https://www.programiz.com/python-programming).
+* The code, blog post, and analysis is entirely original work.  
+
+
 #### <u> Goal </u>
 
-The Barclay’s English Premier League (EPL) is arguably the greatest soccer (football) league in the world.  With the likes of Liverpool, Manchester United, Chelsea, and Arsenal, the EPL is one of the most dynamic, fast paced, unpredictable leagues in the world.  Teams in the EPL play in a 38-match season from September through May of each year, while facing each opposing team twice.  Over the last two decades, the website [Football-Data-Co](https://www.football-data.co.uk/englandm.php) has gathered results, match statistics, and betting odds of every EPL game.  We’ll be utilizing some of the data to create a fixture prediction model which will give us an output, depending on a certain set of variables, the result of a given match.  
+The Barclay’s English Premier League (EPL) is arguably the greatest soccer (football) league in the world.  With the likes of Liverpool, Manchester United, Chelsea, and Arsenal, the EPL is one of the most dynamic, fast paced, unpredictable leagues in the world.  Teams in the EPL play in a 38-match season from September through May of each year, while facing each opposing team twice.  Over the last two decades, [Football-Data-Co](https://www.football-data.co.uk/englandm.php) has gathered results, match statistics, and betting odds of every EPL game.  We’ll be utilizing some of the data to create a fixture prediction model which will give us an output, depending on a certain set of variables, the result of a given match.  
 
 #### <u> Notes for Football Data </u>
 Below, you'll find a list of all the past and present variables and match statistics that are available from each season.  Note that some variables are no longer in use.  Later in the post, we'll discuss the different variables that are used and the featuer selection methods.   
